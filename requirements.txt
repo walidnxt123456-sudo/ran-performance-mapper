@@ -1,0 +1,10 @@
+# Web Framework
+fastapi
+uvicorn[standard]
+
+# Data Processing
+pandas
+openpyxl
+
+# Utilities
+python-multipart

@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Environments
+.venv/
+.env
+env/
+venv/
+
+# Data (Ignore the actual files, keep the folder)
+data/pm/*
+!data/pm/.gitkeep
+
+data/cm/*
+!data/pm/.gitkeep
+
+data/cell_file/*
+!data/cell_file/.gitkeep
+
+
+# IDEs
+.vscode/
+.idea/
