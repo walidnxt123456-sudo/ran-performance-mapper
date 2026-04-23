@@ -46,7 +46,7 @@
 			</section>
 			
 			<button id="btn-apply" class="btn-primary" style="width: 100%; margin-top: 20px;">
-				Apply Selection
+				Apply Selection To Show nearest Cell
 			</button>
 			
 
@@ -58,14 +58,48 @@
                 </div>
             </section>
             
+
             <div class="session-info">
                 ID: <span id="display-session-id">---</span>
             </div>
 
 			<section class="control-group" id="pm-discovery-section" style="display: none;">
 				<h4>Performance Discovery</h4>
-				<div id="pm-tree-container" class="pm-tree">
-					</div>
+				
+				<button id="btn-pm-extraction" class="btn-primary" style="width: 100%; margin-top: 10px;">
+					Pm Extraction
+				</button>
+				
+				<div class="input-row" style="margin-bottom: 10px;">
+					<label>Date:</label>
+					<input type="date" id="pm-date-select">
+				</div>
+				
+				<div class="input-row" style="margin-bottom: 10px;">
+					<label>Aggregation:</label>
+					<select id="pm-agg-mode">
+						<option value="busy_hour">Busy Hour</option>
+						<option value="average">Average</option>
+					</select>
+				</div>
+				
+				<div class="input-row" style="margin-bottom: 10px;">
+					<label>Cell Column:</label>
+					<select id="pm-cell-col-select"></select>
+				</div>
+				
+				<div class="input-row" style="margin-bottom: 10px;">
+					<label>Date Column:</label>
+					<select id="pm-date-col-select"></select>
+				</div>
+				
+				<div class="input-row" style="margin-bottom: 10px;">
+					<label>Hour Column:</label>
+					<select id="pm-hour-col-select"></select>
+				</div>
+
+				
+				<div id="pm-tree-container" class="pm-tree"></div>
 			</section>
 
         </aside>
@@ -79,10 +113,10 @@
 
     <script src="/static/js/api.js"></script>
 	<script src="/static/js/map/spatial_utils.js"></script>
-	
+
 	<script src="/static/js/map/map_manager.js"></script>
 	<script src="/static/js/layers/site_layer.js"></script>
-	
+
 	<script src="/static/js/ui/pm_ui_controller.js"></script>
 	<script src="/static/js/ui/ui_controller.js"></script>
 	

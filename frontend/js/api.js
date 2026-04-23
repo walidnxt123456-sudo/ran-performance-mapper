@@ -20,6 +20,9 @@ const ApiService = {
 
             if (!response.ok) {
                 throw new Error(`Server Error: ${response.status}`);
+				const errorBody = await response.text();
+				console.error('[API ERROR] Server response body:', errorBody);
+				throw new Error(`Server Error: ${response.status}`);
             }
 
             const result = await response.json();

@@ -29,6 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+	
+	//4.pm extraction
+	const pm_extraction_Btn = document.getElementById('btn-pm-extraction');
+	if (pm_extraction_Btn) {
+		pm_extraction_Btn.addEventListener('click', () => PmUIController.triggerExtraction());
+	}
 
     console.log("%c[SYSTEM] All modules linked and ready.", "color: #2ecc71;");
 });

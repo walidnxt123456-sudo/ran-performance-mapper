@@ -4,11 +4,68 @@ const PmUIController = {
     containerId: 'pm-tree-container',
     sectionId: 'pm-discovery-section',
     kpiCache: {}, // Stores data like: { "file|kpi": { "cell1": -95, "cell2": -105 } }
+	lastDiscoveryData: null, // Store the full discovery JSON here
+	lastSitesData: null,
+
+	getDiscoveryCellIds() {
+		if (!this.lastSitesData) return [];
+		
+		return this.lastSitesData.flatMap(site => 
+        site.sectors.map(sector => sector.cell)
+		);
+	},
+	
+	_excelDateToString(serial) {
+		const num = parseFloat(serial);  // handles "45992.0" and 45992 both
+		if (isNaN(num)) return String(serial);  // fallback if not a number
+		const date = new Date((num - 25569) * 86400 * 1000);
+		if (isNaN(date.getTime())) return String(serial);  // fallback if invalid date
+		return date.toISOString().split('T')[0];
+	},
 
     renderDiscovery(files) {
+		this.lastDiscoveryData = files; // Save the JSON received from backend
         const container = document.getElementById(this.containerId);
         const section = document.getElementById(this.sectionId);
+		
+		//------
+		// Collect all unique columns across all files
+		const allColumns = [...new Set(files.flatMap(f => f.all_columns || []))];
+		const detectedDateCol = files[0]?.detected_date_col || null;
+		const detectedHourCol = null; // no auto-detect for hour, user picks manually
+		const detectedCellCol = null; // no auto-detect for cell, user picks manually
+
+		const cellColSelect = document.getElementById('pm-cell-col-select');
+		const dateColSelect = document.getElementById('pm-date-col-select');
+		const hourColSelect = document.getElementById('pm-hour-col-select');
+
+		cellColSelect.innerHTML = allColumns
+			.map(col => `<option value="${col}">${col}</option>`)
+			.join('');
+
+		dateColSelect.innerHTML = allColumns
+			.map(col => `<option value="${col}" ${col === detectedDateCol ? 'selected' : ''}>${col}</option>`)
+			.join('');
+
+		hourColSelect.innerHTML = allColumns
+			.map(col => `<option value="${col}">${col}</option>`)
+			.join('');
+
+
+		//------
+		
         if (!files || files.length === 0) return;
+		
+		// Collect all unique dates across all files and convert them
+		const rawDates = [...new Set(files.flatMap(f => f.date_available || []))].sort();
+
+		const dateRow = document.querySelector('#pm-discovery-section .input-row');
+		dateRow.innerHTML = `
+			<label>Date:</label>
+			<select id="pm-date-select">
+				${rawDates.map(d => `<option value="${d}">${d}</option>`).join('')}
+			</select>
+		`;
 
         section.style.display = 'block';
         container.innerHTML = files.map(file => this._buildFileHtml(file)).join('');
@@ -44,41 +101,14 @@ const PmUIController = {
 	async handleToggle(checkbox) {
 		const item = checkbox.closest('.kpi-item');
 		const switcher = item.querySelector('.vis-switcher');
-		const { file, kpi } = item.dataset;
-		const cacheKey = `${file}|${kpi}`;
 
 		if (checkbox.checked) {
-			// 1. Check the map for cells
-			const cellList = SiteLayer.getCurrentCellIds(); 
-			
-			if (cellList.length === 0) {
-				alert("Please apply a selection to the map first.");
-				checkbox.checked = false;
-				return;
-			}
-
-			// 2. Fetch if not in cache
-			if (!this.kpiCache[cacheKey]) {
-				console.log(`[PM_UI] Fetching Mode B for ${kpi}`);
-				const response = await ApiService.post('/api/fetch-kpi', {
-					file_name: file,
-					kpi_name: kpi,
-					cells: cellList
-				});
-
-				if (response.success) {
-					this.kpiCache[cacheKey] = response.values;
-					switcher.style.display = 'inline-flex';
-				} else {
-					alert("Failed to fetch KPI data.");
-					checkbox.checked = false;
-				}
-			} else {
-				switcher.style.display = 'inline-flex';
-			}
+			switcher.style.display = 'inline-flex';
 		} else {
 			switcher.style.display = 'none';
-			// Logic for clearing visualization goes here later
+			// clear from cache if needed later
+			const { file, kpi } = item.dataset;
+			delete this.kpiCache[`${file}|${kpi}`];
 		}
 	},
 
@@ -94,5 +124,43 @@ const PmUIController = {
         const isHidden = list.style.display === 'none';
         list.style.display = isHidden ? 'block' : 'none';
         icon.innerText = isHidden ? '[-]' : '[+]';
-    }
+    },
+	
+	async triggerExtraction() {
+		// 1. Get Mandatory Date
+		const dateValue = document.getElementById('pm-date-select').value;
+		if (!dateValue) {
+			alert("Target Date is mandatory.");
+			return;
+		}
+
+		// 2. Get Selected KPIs (from your existing checkboxes)
+		const selected = Array.from(document.querySelectorAll('.kpi-item input:checked'))
+			.map(input => ({
+				file: input.closest('.kpi-item').dataset.file,
+				kpi: input.closest('.kpi-item').dataset.kpi
+			}));
+
+		if (selected.length === 0) {
+			alert("Please select at least one KPI.");
+			return;
+		}
+
+		// 3. Get Cell IDs from the Discovery JSON (as requested)
+		const cellList = this.getDiscoveryCellIds();
+
+		const payload = {
+			mode: "extraction",
+			target_date: [String(dateValue)],
+			extraction_mode: document.getElementById('pm-agg-mode').value === 'busy_hour' ? 'bh' : 'avg',
+			cell_identity_column: document.getElementById('pm-cell-col-select').value,
+			date_identity_column: document.getElementById('pm-date-col-select').value,
+			hour_identity_column: document.getElementById('pm-hour-col-select').value,
+			cells: cellList,
+			kpi_selection: selected
+		};
+
+		console.log("[PM_UI] Bulk Extraction Payload:", payload);
+		return await ApiService.post('/api/fetch-kpi', payload);
+	}
 };

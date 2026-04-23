@@ -1,0 +1,1195 @@
+11:39:13 - SESSION_MANAGER - INFO - Janitor background thread active.
+11:39:13 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+11:39:13 - GEO_CONTROLLER - INFO - GeoServiceController inti
+11:39:13 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+11:39:19 - SESSION_MANAGER - INFO - Janitor background thread active.
+11:39:19 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+11:39:19 - GEO_CONTROLLER - INFO - GeoServiceController inti
+11:39:19 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+11:39:21 - SESSION_MANAGER - INFO - Janitor background thread active.
+11:39:21 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+11:39:21 - GEO_CONTROLLER - INFO - GeoServiceController inti
+11:39:21 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+11:40:41 - PM_CONTROLLER - INFO - >>> Inbound Request: PM Asset Discovery (Mode A)
+11:40:41 - PM_SERVICE - INFO - Scanning directory: C:\Users\wb74080\Documents\GitHub\ran-performance-mapper\data\pm
+11:40:41 - PM_SERVICE - INFO - Found 1 potential files in PM folder.
+11:40:41 - PM_SERVICE - INFO - Processing headers for: pm_lte_kpi.csv
+11:40:41 - PM_SERVICE - INFO -    -> Detected 11 KPIs in pm_lte_kpi.csv
+11:40:41 - PM_CONTROLLER - INFO - <<< Discovery Complete. Files identified: 1
+11:40:55 - PM_CONTROLLER - INFO - >>> Inbound Request: PM Asset Discovery (Mode A)
+11:40:55 - PM_SERVICE - INFO - Scanning directory: C:\Users\wb74080\Documents\GitHub\ran-performance-mapper\data\pm
+11:40:55 - PM_SERVICE - INFO - Found 1 potential files in PM folder.
+11:40:55 - PM_SERVICE - INFO - Processing headers for: pm_lte_kpi.csv
+11:40:55 - PM_SERVICE - INFO -    -> Detected 11 KPIs in pm_lte_kpi.csv
+11:40:55 - PM_CONTROLLER - INFO - <<< Discovery Complete. Files identified: 1
+11:41:06 - PM_CONTROLLER - INFO - >>> Inbound Request: PM Asset Discovery (Mode A)
+11:41:06 - PM_SERVICE - INFO - Scanning directory: C:\Users\wb74080\Documents\GitHub\ran-performance-mapper\data\pm
+11:41:06 - PM_SERVICE - INFO - Found 1 potential files in PM folder.
+11:41:06 - PM_SERVICE - INFO - Processing headers for: pm_lte_kpi.csv
+11:41:06 - PM_SERVICE - INFO -    -> Detected 11 KPIs in pm_lte_kpi.csv
+11:41:06 - PM_CONTROLLER - INFO - <<< Discovery Complete. Files identified: 1
+13:48:39 - PM_CONTROLLER - INFO - >>> Inbound Request: PM Asset Discovery (Mode A)
+13:48:40 - PM_SERVICE - INFO - Scanning directory: C:\Users\wb74080\Documents\GitHub\ran-performance-mapper\data\pm
+13:48:40 - PM_SERVICE - INFO - Found 1 potential files in PM folder.
+13:48:40 - PM_SERVICE - INFO - Processing headers for: pm_lte_kpi.csv
+13:48:40 - PM_SERVICE - INFO -    -> Detected 11 KPIs in pm_lte_kpi.csv
+13:48:40 - PM_CONTROLLER - INFO - <<< Discovery Complete. Files identified: 1
+12:40:19 - SESSION_MANAGER - INFO - Janitor background thread active.
+12:40:19 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+12:40:19 - GEO_CONTROLLER - INFO - GeoServiceController inti
+12:40:19 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+12:40:23 - SESSION_MANAGER - INFO - Janitor background thread active.
+12:40:23 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+12:40:23 - GEO_CONTROLLER - INFO - GeoServiceController inti
+12:40:23 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+12:40:23 - SESSION_MANAGER - INFO - Janitor background thread active.
+12:40:24 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+12:40:24 - GEO_CONTROLLER - INFO - GeoServiceController inti
+12:40:24 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+12:41:46 - CORE_CONTROLLER - ERROR - Error during site discovery: PmServiceController.discover_pm_assets() takes 1 positional argument but 2 were given
+13:55:24 - SESSION_MANAGER - INFO - Janitor background thread active.
+13:55:24 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+13:55:24 - GEO_CONTROLLER - INFO - GeoServiceController inti
+13:55:24 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+13:55:25 - SESSION_MANAGER - INFO - Janitor background thread active.
+13:55:25 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+13:55:25 - GEO_CONTROLLER - INFO - GeoServiceController inti
+13:55:25 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+13:55:32 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+13:55:32 - CORE_CONTROLLER - ERROR - Error during site discovery: 'PmServiceController' object has no attribute '_call_advanced_module'
+13:57:10 - SESSION_MANAGER - INFO - Janitor background thread active.
+13:57:10 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+13:57:10 - GEO_CONTROLLER - INFO - GeoServiceController inti
+13:57:10 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+13:57:10 - SESSION_MANAGER - INFO - Janitor background thread active.
+13:57:10 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+13:57:10 - GEO_CONTROLLER - INFO - GeoServiceController inti
+13:57:10 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+13:57:17 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+14:03:20 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+14:04:18 - SESSION_MANAGER - INFO - Janitor background thread active.
+14:04:18 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+14:04:18 - GEO_CONTROLLER - INFO - GeoServiceController inti
+14:04:18 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+14:04:19 - SESSION_MANAGER - INFO - Janitor background thread active.
+14:04:19 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+14:04:19 - GEO_CONTROLLER - INFO - GeoServiceController inti
+14:04:19 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+14:04:19 - SESSION_MANAGER - INFO - Janitor background thread active.
+14:04:19 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+14:04:19 - GEO_CONTROLLER - INFO - GeoServiceController inti
+14:04:19 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+14:04:35 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+14:05:27 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+14:05:59 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+14:07:06 - SESSION_MANAGER - INFO - Janitor background thread active.
+14:07:06 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+14:07:06 - GEO_CONTROLLER - INFO - GeoServiceController inti
+14:07:06 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+14:07:08 - SESSION_MANAGER - INFO - Janitor background thread active.
+14:07:08 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+14:07:08 - GEO_CONTROLLER - INFO - GeoServiceController inti
+14:07:08 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+14:07:08 - SESSION_MANAGER - INFO - Janitor background thread active.
+14:07:08 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+14:07:08 - GEO_CONTROLLER - INFO - GeoServiceController inti
+14:07:08 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+14:07:17 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+14:10:03 - SESSION_MANAGER - INFO - Janitor background thread active.
+14:10:03 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+14:10:03 - GEO_CONTROLLER - INFO - GeoServiceController inti
+14:10:03 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+14:10:03 - SESSION_MANAGER - INFO - Janitor background thread active.
+14:10:03 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+14:10:03 - GEO_CONTROLLER - INFO - GeoServiceController inti
+14:10:03 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+14:10:06 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+14:42:59 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+14:49:19 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+14:51:05 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+14:51:21 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+14:51:26 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+14:54:18 - SESSION_MANAGER - INFO - Janitor background thread active.
+14:54:18 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+14:54:18 - GEO_CONTROLLER - INFO - GeoServiceController inti
+14:54:18 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+14:54:20 - SESSION_MANAGER - INFO - Janitor background thread active.
+14:54:20 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+14:54:20 - GEO_CONTROLLER - INFO - GeoServiceController inti
+14:54:20 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+14:54:46 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+14:57:35 - SESSION_MANAGER - INFO - Janitor background thread active.
+14:57:35 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+14:57:35 - GEO_CONTROLLER - INFO - GeoServiceController inti
+14:57:35 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+14:57:35 - SESSION_MANAGER - INFO - Janitor background thread active.
+14:57:35 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+14:57:35 - GEO_CONTROLLER - INFO - GeoServiceController inti
+14:57:35 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+14:57:36 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+15:19:04 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:19:04 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:19:04 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:19:04 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:19:04 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:19:04 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:19:04 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:19:04 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:22:36 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+15:23:44 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:23:44 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:23:44 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:23:44 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:23:45 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:23:45 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:23:45 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:23:45 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:23:52 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+15:33:34 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:33:34 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:33:34 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:33:34 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:33:34 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:33:34 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:33:34 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:33:34 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:33:53 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+15:33:53 - CORE_CONTROLLER - ERROR - Error during site discovery: name 'paths_to_process' is not defined
+15:35:58 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:35:58 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:35:58 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:35:58 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:35:58 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:35:58 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:35:58 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:35:58 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:36:06 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+15:36:06 - PM_CONTROLLER - INFO - >>> Executing module for single path: d
+15:36:06 - PM_CONTROLLER - INFO - >>> Executing module for single path: a
+15:36:06 - PM_CONTROLLER - INFO - >>> Executing module for single path: t
+15:36:06 - PM_CONTROLLER - INFO - >>> Executing module for single path: a
+15:36:06 - PM_CONTROLLER - INFO - >>> Executing module for single path: /
+15:37:34 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:37:34 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:37:34 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:37:34 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:37:35 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:37:35 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:37:35 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:37:35 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:41:36 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:41:36 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:41:36 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:41:36 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:41:36 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:41:36 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:41:36 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:41:36 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:41:48 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:41:48 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:41:48 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:41:48 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:41:48 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:41:48 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:41:48 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:41:48 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:41:59 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:41:59 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:41:59 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:41:59 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:41:59 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:41:59 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:41:59 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:41:59 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:47:07 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:47:07 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:47:07 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:47:07 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:47:07 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:47:07 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:47:07 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:47:07 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:47:35 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:47:35 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:47:35 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:47:35 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:47:35 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:47:35 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:47:35 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:47:35 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:48:15 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+15:50:00 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:50:00 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:50:00 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:50:00 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:50:00 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:50:00 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:50:00 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:50:00 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:50:03 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+15:50:55 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:50:55 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:50:55 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:50:55 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:50:55 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:50:55 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:50:55 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:50:55 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:50:56 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+15:50:56 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+15:53:37 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:53:37 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:53:37 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:53:37 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:53:37 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:53:37 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:53:37 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:53:37 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:53:40 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+15:53:40 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+15:54:21 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:54:21 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:54:21 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:54:21 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:54:21 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:54:21 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:54:21 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:54:21 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:54:37 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:54:37 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:54:37 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:54:37 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:54:37 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:54:37 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:54:37 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:54:37 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:54:40 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+15:54:40 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+08:21:19 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:21:19 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:21:19 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:21:19 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:21:19 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:21:19 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:21:19 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:21:19 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:21:25 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:21:25 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:21:25 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:21:25 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:21:26 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:21:26 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:21:26 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:21:26 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:27:34 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:27:34 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:27:34 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:27:34 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:27:34 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:27:34 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:27:34 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:27:34 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:49:53 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:49:53 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:49:53 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:49:53 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:49:53 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:49:53 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:49:53 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:49:53 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:51:47 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:51:47 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:51:47 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:51:47 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:51:47 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:51:47 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:51:47 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:51:47 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:52:05 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:52:05 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:52:05 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:52:05 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:52:05 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:52:05 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:52:05 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:52:05 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:52:49 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:52:49 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:52:49 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:52:49 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:52:49 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:52:49 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:52:49 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:52:49 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:53:25 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:53:25 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:53:25 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:53:25 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:53:25 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:53:25 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:53:25 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:53:25 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+09:01:25 - SESSION_MANAGER - INFO - Janitor background thread active.
+09:01:25 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+09:01:25 - GEO_CONTROLLER - INFO - GeoServiceController inti
+09:01:25 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+09:01:25 - SESSION_MANAGER - INFO - Janitor background thread active.
+09:01:25 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+09:01:25 - GEO_CONTROLLER - INFO - GeoServiceController inti
+09:01:25 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+09:02:15 - SESSION_MANAGER - INFO - Janitor background thread active.
+09:02:15 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+09:02:15 - GEO_CONTROLLER - INFO - GeoServiceController inti
+09:02:15 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+09:02:15 - SESSION_MANAGER - INFO - Janitor background thread active.
+09:02:15 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+09:02:15 - GEO_CONTROLLER - INFO - GeoServiceController inti
+09:02:15 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+09:03:30 - SESSION_MANAGER - INFO - Janitor background thread active.
+09:03:30 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+09:03:30 - GEO_CONTROLLER - INFO - GeoServiceController inti
+09:03:30 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+09:03:30 - SESSION_MANAGER - INFO - Janitor background thread active.
+09:03:30 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+09:03:30 - GEO_CONTROLLER - INFO - GeoServiceController inti
+09:03:30 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+09:03:38 - SESSION_MANAGER - INFO - Janitor background thread active.
+09:03:38 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+09:03:38 - GEO_CONTROLLER - INFO - GeoServiceController inti
+09:03:38 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+09:03:38 - SESSION_MANAGER - INFO - Janitor background thread active.
+09:03:38 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+09:03:38 - GEO_CONTROLLER - INFO - GeoServiceController inti
+09:03:38 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+10:21:57 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+10:21:57 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+10:21:57 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+10:25:40 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+10:25:40 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+10:25:40 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+10:28:01 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+10:28:01 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+10:28:01 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+10:30:38 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+10:30:38 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+10:30:38 - CORE_CONTROLLER - INFO - Discovery successful: found 6 sites.
+10:32:25 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+10:32:25 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+10:32:25 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+14:00:30 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+14:00:30 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+14:00:30 - CORE_CONTROLLER - INFO - Discovery successful: found 6 sites.
+14:01:47 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+14:01:47 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+14:01:47 - CORE_CONTROLLER - INFO - Discovery successful: found 6 sites.
+15:32:03 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+15:32:03 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+15:32:03 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+15:32:18 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+15:32:18 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+15:32:18 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+15:36:51 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:36:51 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:36:51 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:36:51 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:36:52 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:36:52 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:36:52 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:36:52 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:37:10 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:37:10 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:37:10 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:37:10 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:37:10 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:37:10 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:37:10 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:37:10 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:39:06 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:39:06 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:39:06 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:39:06 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:39:06 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:39:06 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:39:06 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:39:06 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:39:43 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+15:39:43 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+15:39:43 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+15:47:27 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:47:27 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:47:27 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:47:27 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:47:28 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:47:28 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:47:28 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:47:28 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:48:00 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:48:00 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:48:00 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:48:00 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:48:00 - SESSION_MANAGER - INFO - Janitor background thread active.
+15:48:00 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+15:48:00 - GEO_CONTROLLER - INFO - GeoServiceController inti
+15:48:00 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+15:48:08 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+15:48:08 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+15:48:08 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+15:48:21 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+15:48:21 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+15:48:21 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+08:08:55 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:08:55 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:08:55 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:08:55 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:08:57 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:08:57 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:08:57 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:08:57 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:08:57 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:08:57 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:08:57 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:08:57 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:09:38 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+08:09:38 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+08:09:38 - CORE_CONTROLLER - INFO - Discovery successful: found 6 sites.
+08:28:12 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:28:12 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:28:12 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:28:12 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:28:12 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:28:12 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:28:12 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:28:12 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:31:55 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+08:31:55 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+08:31:55 - CORE_CONTROLLER - INFO - Discovery successful: found 6 sites.
+08:33:56 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:33:56 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:33:56 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:33:56 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:33:56 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:33:56 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:33:56 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:33:56 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:35:34 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:35:34 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:35:34 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:35:34 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:35:34 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:35:34 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:35:34 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:35:34 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:35:48 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:35:48 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:35:48 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:35:48 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:35:48 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:35:48 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:35:48 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:35:48 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:36:40 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:36:40 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:36:40 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:36:40 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:36:40 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:36:40 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:36:40 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:36:40 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:36:55 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+08:36:55 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+08:36:57 - CORE_CONTROLLER - INFO - Discovery successful: found 6 sites.
+08:39:04 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:39:04 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:39:04 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:39:04 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:39:04 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:39:04 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:39:04 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:39:04 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:39:07 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+08:39:07 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+08:39:08 - CORE_CONTROLLER - INFO - Discovery successful: found 6 sites.
+08:41:13 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:41:13 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:41:13 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:41:13 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:41:13 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:41:13 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:41:13 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:41:13 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:41:18 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+08:41:18 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+08:41:19 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+08:45:49 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:45:49 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:45:49 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:45:49 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:45:49 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:45:49 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:45:49 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:45:49 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:50:58 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:50:58 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:50:58 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:50:58 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:50:58 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:50:58 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:50:58 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:50:58 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:54:56 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+08:54:56 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+08:54:57 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+08:55:53 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:55:53 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:55:53 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:55:53 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:55:53 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:55:53 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:55:53 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:55:53 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:56:45 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:56:45 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:56:45 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:56:45 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:56:45 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:56:45 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:56:45 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:56:45 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:56:46 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+08:56:46 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+08:56:47 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+08:57:37 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:57:37 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:57:37 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:57:37 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:57:37 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:57:37 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:57:37 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:57:37 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:58:00 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:58:00 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:58:00 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:58:00 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:58:00 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:58:00 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:58:00 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:58:00 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:58:00 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+08:58:00 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+08:58:01 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+09:02:03 - SESSION_MANAGER - INFO - Janitor background thread active.
+09:02:03 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+09:02:03 - GEO_CONTROLLER - INFO - GeoServiceController inti
+09:02:03 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+09:02:03 - SESSION_MANAGER - INFO - Janitor background thread active.
+09:02:03 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+09:02:03 - GEO_CONTROLLER - INFO - GeoServiceController inti
+09:02:03 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+09:02:19 - SESSION_MANAGER - INFO - Janitor background thread active.
+09:02:19 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+09:02:19 - GEO_CONTROLLER - INFO - GeoServiceController inti
+09:02:19 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+09:02:19 - SESSION_MANAGER - INFO - Janitor background thread active.
+09:02:19 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+09:02:19 - GEO_CONTROLLER - INFO - GeoServiceController inti
+09:02:19 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+09:02:23 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+09:02:23 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+09:02:24 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+09:03:12 - SESSION_MANAGER - INFO - Janitor background thread active.
+09:03:12 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+09:03:12 - GEO_CONTROLLER - INFO - GeoServiceController inti
+09:03:12 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+09:03:12 - SESSION_MANAGER - INFO - Janitor background thread active.
+09:03:12 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+09:03:12 - GEO_CONTROLLER - INFO - GeoServiceController inti
+09:03:12 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+09:03:29 - SESSION_MANAGER - INFO - Janitor background thread active.
+09:03:29 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+09:03:29 - GEO_CONTROLLER - INFO - GeoServiceController inti
+09:03:29 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+09:03:29 - SESSION_MANAGER - INFO - Janitor background thread active.
+09:03:29 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+09:03:29 - GEO_CONTROLLER - INFO - GeoServiceController inti
+09:03:29 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+09:03:33 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+09:03:33 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+09:03:34 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+09:04:48 - SESSION_MANAGER - INFO - Janitor background thread active.
+09:04:48 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+09:04:48 - GEO_CONTROLLER - INFO - GeoServiceController inti
+09:04:48 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+09:04:48 - SESSION_MANAGER - INFO - Janitor background thread active.
+09:04:48 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+09:04:48 - GEO_CONTROLLER - INFO - GeoServiceController inti
+09:04:48 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+09:04:50 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+09:04:50 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+09:04:51 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+09:05:14 - SESSION_MANAGER - INFO - Janitor background thread active.
+09:05:14 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+09:05:14 - GEO_CONTROLLER - INFO - GeoServiceController inti
+09:05:14 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+09:05:14 - SESSION_MANAGER - INFO - Janitor background thread active.
+09:05:14 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+09:05:14 - GEO_CONTROLLER - INFO - GeoServiceController inti
+09:05:14 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+09:05:18 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+09:05:18 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+09:05:19 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+09:08:54 - SESSION_MANAGER - INFO - Janitor background thread active.
+09:08:54 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+09:08:54 - GEO_CONTROLLER - INFO - GeoServiceController inti
+09:08:54 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+09:08:54 - SESSION_MANAGER - INFO - Janitor background thread active.
+09:08:54 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+09:08:54 - GEO_CONTROLLER - INFO - GeoServiceController inti
+09:08:54 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+09:08:58 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+09:08:58 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+09:08:59 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+10:20:43 - SESSION_MANAGER - INFO - Janitor background thread active.
+10:20:43 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+10:20:43 - GEO_CONTROLLER - INFO - GeoServiceController inti
+10:20:43 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+10:20:43 - SESSION_MANAGER - INFO - Janitor background thread active.
+10:20:43 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+10:20:43 - GEO_CONTROLLER - INFO - GeoServiceController inti
+10:20:43 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+10:20:57 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+10:20:57 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+10:20:59 - CORE_CONTROLLER - ERROR - Critical failure in process_site_discovery: name 'available_dates' is not defined
+10:23:32 - SESSION_MANAGER - INFO - Janitor background thread active.
+10:23:32 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+10:23:32 - GEO_CONTROLLER - INFO - GeoServiceController inti
+10:23:32 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+10:23:32 - SESSION_MANAGER - INFO - Janitor background thread active.
+10:23:32 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+10:23:32 - GEO_CONTROLLER - INFO - GeoServiceController inti
+10:23:32 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+10:23:32 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+10:23:32 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+10:23:33 - CORE_CONTROLLER - ERROR - Critical failure in process_site_discovery: name 'available_dates' is not defined
+10:23:39 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+10:23:39 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+10:23:40 - CORE_CONTROLLER - ERROR - Critical failure in process_site_discovery: name 'available_dates' is not defined
+10:23:51 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+10:23:51 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+10:23:52 - CORE_CONTROLLER - ERROR - Critical failure in process_site_discovery: name 'available_dates' is not defined
+10:26:38 - SESSION_MANAGER - INFO - Janitor background thread active.
+10:26:38 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+10:26:38 - GEO_CONTROLLER - INFO - GeoServiceController inti
+10:26:38 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+10:26:38 - SESSION_MANAGER - INFO - Janitor background thread active.
+10:26:38 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+10:26:38 - GEO_CONTROLLER - INFO - GeoServiceController inti
+10:26:38 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+10:27:01 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+10:27:01 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+10:27:02 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+14:51:58 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+14:51:58 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+14:52:09 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+14:58:26 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+14:58:26 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+14:58:27 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+15:06:41 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+15:06:41 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+15:06:42 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+15:13:30 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+15:13:30 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+15:13:31 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+15:24:35 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+15:24:35 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+15:24:36 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+15:26:52 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+15:26:52 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+15:26:53 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+15:51:30 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+15:51:30 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+15:51:35 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+16:21:13 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+16:21:13 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+16:21:23 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+16:25:41 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+16:25:41 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+16:25:42 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+16:54:48 - SESSION_MANAGER - INFO - Janitor background thread active.
+16:54:48 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+16:54:48 - GEO_CONTROLLER - INFO - GeoServiceController inti
+16:54:48 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+16:54:50 - SESSION_MANAGER - INFO - Janitor background thread active.
+16:54:50 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+16:54:50 - GEO_CONTROLLER - INFO - GeoServiceController inti
+16:54:50 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+17:01:06 - SESSION_MANAGER - INFO - Janitor background thread active.
+17:01:06 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+17:01:06 - GEO_CONTROLLER - INFO - GeoServiceController inti
+17:01:06 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+17:01:07 - SESSION_MANAGER - INFO - Janitor background thread active.
+17:01:07 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+17:01:07 - GEO_CONTROLLER - INFO - GeoServiceController inti
+17:01:07 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+17:01:11 - SESSION_MANAGER - INFO - Janitor background thread active.
+17:01:11 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+17:01:11 - GEO_CONTROLLER - INFO - GeoServiceController inti
+17:01:11 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+17:01:11 - SESSION_MANAGER - INFO - Janitor background thread active.
+17:01:11 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+17:01:11 - GEO_CONTROLLER - INFO - GeoServiceController inti
+17:01:11 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+17:02:42 - SESSION_MANAGER - INFO - Janitor background thread active.
+17:02:42 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+17:02:42 - GEO_CONTROLLER - INFO - GeoServiceController inti
+17:02:42 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+17:02:42 - SESSION_MANAGER - INFO - Janitor background thread active.
+17:02:42 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+17:02:42 - GEO_CONTROLLER - INFO - GeoServiceController inti
+17:02:42 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+17:03:20 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+17:03:20 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+17:03:21 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+17:26:34 - SESSION_MANAGER - INFO - Janitor background thread active.
+17:26:34 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+17:26:34 - GEO_CONTROLLER - INFO - GeoServiceController inti
+17:26:34 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+17:26:39 - SESSION_MANAGER - INFO - Janitor background thread active.
+17:26:39 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+17:26:39 - GEO_CONTROLLER - INFO - GeoServiceController inti
+17:26:39 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+17:26:39 - SESSION_MANAGER - INFO - Janitor background thread active.
+17:26:39 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+17:26:39 - GEO_CONTROLLER - INFO - GeoServiceController inti
+17:26:39 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+17:27:36 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+17:27:36 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+17:27:37 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+17:28:05 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+17:32:28 - SESSION_MANAGER - INFO - Janitor background thread active.
+17:32:28 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+17:32:28 - GEO_CONTROLLER - INFO - GeoServiceController inti
+17:32:28 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+17:32:28 - SESSION_MANAGER - INFO - Janitor background thread active.
+17:32:28 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+17:32:28 - GEO_CONTROLLER - INFO - GeoServiceController inti
+17:32:28 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+17:32:42 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+17:34:18 - SESSION_MANAGER - INFO - Janitor background thread active.
+17:34:18 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+17:34:18 - GEO_CONTROLLER - INFO - GeoServiceController inti
+17:34:18 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+17:34:19 - SESSION_MANAGER - INFO - Janitor background thread active.
+17:34:19 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+17:34:19 - GEO_CONTROLLER - INFO - GeoServiceController inti
+17:34:19 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+17:34:19 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+17:41:21 - SESSION_MANAGER - INFO - Janitor background thread active.
+17:41:21 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+17:41:21 - GEO_CONTROLLER - INFO - GeoServiceController inti
+17:41:21 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+17:41:21 - SESSION_MANAGER - INFO - Janitor background thread active.
+17:41:21 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+17:41:21 - GEO_CONTROLLER - INFO - GeoServiceController inti
+17:41:21 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+17:41:44 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+17:53:13 - SESSION_MANAGER - INFO - Janitor background thread active.
+17:53:13 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+17:53:13 - GEO_CONTROLLER - INFO - GeoServiceController inti
+17:53:13 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+17:53:14 - SESSION_MANAGER - INFO - Janitor background thread active.
+17:53:14 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+17:53:14 - GEO_CONTROLLER - INFO - GeoServiceController inti
+17:53:14 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+17:53:14 - SESSION_MANAGER - INFO - Janitor background thread active.
+17:53:14 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+17:53:14 - GEO_CONTROLLER - INFO - GeoServiceController inti
+17:53:14 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+17:53:20 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+17:57:24 - SESSION_MANAGER - INFO - Janitor background thread active.
+17:57:24 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+17:57:24 - GEO_CONTROLLER - INFO - GeoServiceController inti
+17:57:24 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+17:57:24 - SESSION_MANAGER - INFO - Janitor background thread active.
+17:57:24 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+17:57:24 - GEO_CONTROLLER - INFO - GeoServiceController inti
+17:57:24 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+17:57:27 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+18:02:54 - SESSION_MANAGER - INFO - Janitor background thread active.
+18:02:54 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+18:02:54 - GEO_CONTROLLER - INFO - GeoServiceController inti
+18:02:54 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+18:02:54 - SESSION_MANAGER - INFO - Janitor background thread active.
+18:02:54 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+18:02:54 - GEO_CONTROLLER - INFO - GeoServiceController inti
+18:02:54 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+18:04:28 - SESSION_MANAGER - INFO - Janitor background thread active.
+18:04:28 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+18:04:28 - GEO_CONTROLLER - INFO - GeoServiceController inti
+18:04:28 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+18:04:28 - SESSION_MANAGER - INFO - Janitor background thread active.
+18:04:28 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+18:04:28 - GEO_CONTROLLER - INFO - GeoServiceController inti
+18:04:28 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+18:06:48 - SESSION_MANAGER - INFO - Janitor background thread active.
+18:06:48 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+18:06:48 - GEO_CONTROLLER - INFO - GeoServiceController inti
+18:06:48 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+18:06:48 - SESSION_MANAGER - INFO - Janitor background thread active.
+18:06:48 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+18:06:48 - GEO_CONTROLLER - INFO - GeoServiceController inti
+18:06:48 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+18:06:55 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+18:08:48 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+18:11:14 - SESSION_MANAGER - INFO - Janitor background thread active.
+18:11:14 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+18:11:14 - GEO_CONTROLLER - INFO - GeoServiceController inti
+18:11:14 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+18:11:14 - SESSION_MANAGER - INFO - Janitor background thread active.
+18:11:14 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+18:11:14 - GEO_CONTROLLER - INFO - GeoServiceController inti
+18:11:14 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+18:11:19 - SESSION_MANAGER - INFO - Janitor background thread active.
+18:11:19 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+18:11:19 - GEO_CONTROLLER - INFO - GeoServiceController inti
+18:11:19 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+18:11:19 - SESSION_MANAGER - INFO - Janitor background thread active.
+18:11:19 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+18:11:19 - GEO_CONTROLLER - INFO - GeoServiceController inti
+18:11:19 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+18:11:22 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+08:21:54 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:21:54 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:21:54 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:21:54 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:22:01 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:22:01 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:22:01 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:22:01 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:22:06 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:22:06 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:22:06 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:22:06 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:22:09 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+08:33:11 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:33:11 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:33:11 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:33:11 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:33:14 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:33:14 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:33:14 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:33:14 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:33:34 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+08:34:36 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+08:34:36 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+08:34:39 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.parquet
+08:34:40 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+08:35:28 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+08:36:15 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+08:36:24 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+08:36:24 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.csv
+08:36:26 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/pm_lte_kpi.parquet
+08:36:30 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+08:36:48 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+08:39:35 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:39:35 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:39:35 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:39:35 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:39:35 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:39:35 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:39:35 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:39:35 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:43:30 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:43:30 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:43:30 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:43:30 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:43:30 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:43:30 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:43:30 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:43:30 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:48:32 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:48:32 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:48:32 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:48:32 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:48:33 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:48:33 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:48:33 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:48:33 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:48:34 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+08:48:57 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:48:57 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:48:57 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:48:57 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:48:57 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:48:57 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:48:57 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:48:57 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:49:16 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+08:50:12 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:50:12 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:50:12 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:50:12 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:50:13 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:50:13 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:50:13 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:50:13 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:50:15 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+08:50:18 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:50:18 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:50:18 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:50:18 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:50:18 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:50:18 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:50:18 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:50:18 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:50:26 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+08:52:36 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:52:36 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:52:36 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:52:36 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:52:37 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:52:37 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:52:37 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:52:37 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:54:18 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:54:18 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:54:18 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:54:18 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:54:18 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:54:18 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:54:18 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:54:18 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:54:23 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:54:23 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:54:23 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:54:23 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:54:23 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:54:23 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:54:23 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:54:23 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:55:28 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:55:28 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:55:28 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:55:28 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:55:28 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:55:28 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:55:28 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:55:28 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:57:02 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+08:57:05 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:57:05 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:57:05 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:57:05 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:57:05 - SESSION_MANAGER - INFO - Janitor background thread active.
+08:57:05 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+08:57:05 - GEO_CONTROLLER - INFO - GeoServiceController inti
+08:57:05 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+08:57:24 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+10:37:35 - SESSION_MANAGER - INFO - Janitor background thread active.
+10:37:35 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+10:37:35 - GEO_CONTROLLER - INFO - GeoServiceController inti
+10:37:35 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+10:39:27 - SESSION_MANAGER - INFO - Janitor background thread active.
+10:39:27 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+10:39:27 - GEO_CONTROLLER - INFO - GeoServiceController inti
+10:39:27 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+10:39:34 - SESSION_MANAGER - INFO - Janitor background thread active.
+10:39:34 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+10:39:34 - GEO_CONTROLLER - INFO - GeoServiceController inti
+10:39:34 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+10:39:52 - SESSION_MANAGER - INFO - Janitor background thread active.
+10:39:52 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+10:39:52 - GEO_CONTROLLER - INFO - GeoServiceController inti
+10:39:52 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+10:40:00 - SESSION_MANAGER - INFO - Janitor background thread active.
+10:40:00 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+10:40:00 - GEO_CONTROLLER - INFO - GeoServiceController inti
+10:40:00 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+10:40:33 - SESSION_MANAGER - INFO - Janitor background thread active.
+10:40:33 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+10:40:33 - GEO_CONTROLLER - INFO - GeoServiceController inti
+10:40:33 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+10:42:42 - SESSION_MANAGER - INFO - Janitor background thread active.
+10:42:42 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+10:42:42 - GEO_CONTROLLER - INFO - GeoServiceController inti
+10:42:42 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+10:42:42 - SESSION_MANAGER - INFO - Janitor background thread active.
+10:42:42 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+10:42:42 - GEO_CONTROLLER - INFO - GeoServiceController inti
+10:42:42 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+10:42:42 - PM_CONTROLLER - ERROR - !!! Critical Extraction Failure: name 'kpi_name' is not defined
+10:42:42 - PM_CONTROLLER - ERROR - !!! Critical Extraction Failure: name 'kpi_name' is not defined
+10:43:04 - PM_CONTROLLER - ERROR - !!! Critical Extraction Failure: name 'kpi_name' is not defined
+10:44:07 - SESSION_MANAGER - INFO - Janitor background thread active.
+10:44:07 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+10:44:07 - GEO_CONTROLLER - INFO - GeoServiceController inti
+10:44:07 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+10:44:07 - SESSION_MANAGER - INFO - Janitor background thread active.
+10:44:07 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+10:44:07 - GEO_CONTROLLER - INFO - GeoServiceController inti
+10:44:07 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+10:44:15 - PM_CONTROLLER - ERROR - !!! Critical Extraction Failure: name 'file_name' is not defined
+10:46:06 - SESSION_MANAGER - INFO - Janitor background thread active.
+10:46:06 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+10:46:06 - GEO_CONTROLLER - INFO - GeoServiceController inti
+10:46:06 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+10:46:06 - SESSION_MANAGER - INFO - Janitor background thread active.
+10:46:06 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+10:46:06 - GEO_CONTROLLER - INFO - GeoServiceController inti
+10:46:06 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+10:46:10 - PM_CONTROLLER - INFO - >>> Inbound Request: Extracting [{'file': 'pm_lte_kpi.csv', 'kpi': 'DL Data Volume'}] from None
+10:46:10 - PM_SERVICE - INFO - Extracting '[{'file': 'pm_lte_kpi.csv', 'kpi': 'DL Data Volume'}]' from None for 6 cells.
+10:46:10 - PM_CONTROLLER - ERROR - !!! Critical Extraction Failure: unsupported operand type(s) for /: 'WindowsPath' and 'NoneType'
+11:00:01 - SESSION_MANAGER - INFO - Janitor background thread active.
+11:00:01 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+11:00:01 - GEO_CONTROLLER - INFO - GeoServiceController inti
+11:00:01 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+11:00:04 - SESSION_MANAGER - INFO - Janitor background thread active.
+11:00:04 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+11:00:04 - GEO_CONTROLLER - INFO - GeoServiceController inti
+11:00:04 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+11:00:35 - SESSION_MANAGER - INFO - Janitor background thread active.
+11:00:35 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+11:00:35 - GEO_CONTROLLER - INFO - GeoServiceController inti
+11:00:35 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+11:00:35 - SESSION_MANAGER - INFO - Janitor background thread active.
+11:00:35 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+11:00:35 - GEO_CONTROLLER - INFO - GeoServiceController inti
+11:00:35 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+11:00:39 - PM_CONTROLLER - INFO - [API] Mode B Request: [{'file': 'pm_lte_kpi.csv', 'kpi': 'DL Data Volume'}] cells: ['LSO264O', 'LSO264P', 'LSO264Q', 'LSO264X', 'LSO264Y', 'LSO264Z']
+11:00:39 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+11:04:02 - PM_CONTROLLER - INFO - [API] Mode B Request: [{'file': 'pm_lte_kpi.csv', 'kpi': 'DL Data Volume'}] cells: ['LSO264O', 'LSO264P', 'LSO264Q', 'LSO264X', 'LSO264Y', 'LSO264Z']
+11:04:02 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+11:08:17 - SESSION_MANAGER - INFO - Janitor background thread active.
+11:08:17 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+11:08:17 - GEO_CONTROLLER - INFO - GeoServiceController inti
+11:08:17 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+11:08:19 - SESSION_MANAGER - INFO - Janitor background thread active.
+11:08:19 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+11:08:19 - GEO_CONTROLLER - INFO - GeoServiceController inti
+11:08:19 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+11:08:19 - SESSION_MANAGER - INFO - Janitor background thread active.
+11:08:19 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+11:08:19 - GEO_CONTROLLER - INFO - GeoServiceController inti
+11:08:19 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+11:08:30 - PM_CONTROLLER - INFO - [API] Mode B Request: [{'file': 'pm_lte_kpi.csv', 'kpi': 'DL Data Volume'}] cells: ['LSO264O', 'LSO264P', 'LSO264Q', 'LSO264X', 'LSO264Y', 'LSO264Z']
+11:08:30 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+11:09:40 - SESSION_MANAGER - INFO - Janitor background thread active.
+11:09:40 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+11:09:40 - GEO_CONTROLLER - INFO - GeoServiceController inti
+11:09:40 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+11:09:40 - SESSION_MANAGER - INFO - Janitor background thread active.
+11:09:40 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+11:09:40 - GEO_CONTROLLER - INFO - GeoServiceController inti
+11:09:40 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+11:11:01 - PM_CONTROLLER - INFO - [API] Mode B Request: [{'file': 'pm_lte_kpi.csv', 'kpi': 'DL Data Volume'}] cells: ['LSO264O', 'LSO264P', 'LSO264Q', 'LSO264X', 'LSO264Y', 'LSO264Z']
+11:11:01 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+11:13:36 - PM_CONTROLLER - INFO - [API] Mode B Request: [{'file': 'pm_lte_kpi.csv', 'kpi': 'DL Data Volume'}] cells: ['LSO264O', 'LSO264P', 'LSO264Q', 'LSO264X', 'LSO264Y', 'LSO264Z']
+11:13:36 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+11:15:09 - SESSION_MANAGER - INFO - Janitor background thread active.
+11:15:09 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+11:15:09 - GEO_CONTROLLER - INFO - GeoServiceController inti
+11:15:09 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+11:15:11 - SESSION_MANAGER - INFO - Janitor background thread active.
+11:15:11 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+11:15:11 - GEO_CONTROLLER - INFO - GeoServiceController inti
+11:15:11 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+11:15:11 - PM_CONTROLLER - INFO - [API] Mode B Request: [{'file': 'pm_lte_kpi.csv', 'kpi': 'DL Data Volume'}] cells: ['LSO264O', 'LSO264P', 'LSO264Q', 'LSO264X', 'LSO264Y', 'LSO264Z']
+11:15:11 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+11:15:11 - PM_CONTROLLER - INFO - [API] Mode B Request: [{'file': 'pm_lte_kpi.csv', 'kpi': 'DL Data Volume'}] cells: ['LSO264O', 'LSO264P', 'LSO264Q', 'LSO264X', 'LSO264Y', 'LSO264Z']
+11:15:11 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+11:16:11 - PM_CONTROLLER - INFO - [API] Mode B Request: [{'file': 'pm_lte_kpi.csv', 'kpi': 'DL Data Volume'}] cells: ['LSO264O', 'LSO264P', 'LSO264Q', 'LSO264X', 'LSO264Y', 'LSO264Z']
+11:16:11 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+11:19:11 - SESSION_MANAGER - INFO - Janitor background thread active.
+11:19:11 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+11:19:11 - GEO_CONTROLLER - INFO - GeoServiceController inti
+11:19:11 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+11:19:11 - SESSION_MANAGER - INFO - Janitor background thread active.
+11:19:11 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+11:19:11 - GEO_CONTROLLER - INFO - GeoServiceController inti
+11:19:11 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+11:20:20 - SESSION_MANAGER - INFO - Janitor background thread active.
+11:20:20 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+11:20:20 - GEO_CONTROLLER - INFO - GeoServiceController inti
+11:20:20 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+11:20:20 - SESSION_MANAGER - INFO - Janitor background thread active.
+11:20:20 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+11:20:20 - GEO_CONTROLLER - INFO - GeoServiceController inti
+11:20:20 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+11:21:24 - PM_CONTROLLER - INFO - [API] Mode B Request: [{'file': 'pm_lte_kpi.csv', 'kpi': 'DL Data Volume'}] cells: ['LSO264O', 'LSO264P', 'LSO264Q', 'LSO264X', 'LSO264Y', 'LSO264Z']
+11:21:24 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+11:22:37 - SESSION_MANAGER - INFO - Janitor background thread active.
+11:22:37 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+11:22:37 - GEO_CONTROLLER - INFO - GeoServiceController inti
+11:22:37 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+11:22:37 - SESSION_MANAGER - INFO - Janitor background thread active.
+11:22:37 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+11:22:37 - GEO_CONTROLLER - INFO - GeoServiceController inti
+11:22:37 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+11:22:39 - PM_CONTROLLER - INFO - [API] Mode B Request: [{'file': 'pm_lte_kpi.csv', 'kpi': 'DL Data Volume'}] cells: ['LSO264O', 'LSO264P', 'LSO264Q', 'LSO264X', 'LSO264Y', 'LSO264Z']
+11:22:39 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+12:33:28 - SESSION_MANAGER - INFO - Janitor background thread active.
+12:33:28 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+12:33:28 - GEO_CONTROLLER - INFO - GeoServiceController inti
+12:33:28 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+12:33:31 - SESSION_MANAGER - INFO - Janitor background thread active.
+12:33:31 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+12:33:31 - GEO_CONTROLLER - INFO - GeoServiceController inti
+12:33:31 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+12:33:32 - SESSION_MANAGER - INFO - Janitor background thread active.
+12:33:32 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+12:33:32 - GEO_CONTROLLER - INFO - GeoServiceController inti
+12:33:32 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+12:33:40 - PM_CONTROLLER - INFO - [API] Mode B Request: [{'file': 'pm_lte_kpi.csv', 'kpi': 'DL Data Volume'}] cells: ['LSO264O', 'LSO264P', 'LSO264Q', 'LSO264X', 'LSO264Y', 'LSO264Z']
+12:33:40 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+12:37:43 - SESSION_MANAGER - INFO - Janitor background thread active.
+12:37:43 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+12:37:43 - GEO_CONTROLLER - INFO - GeoServiceController inti
+12:37:43 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+12:37:43 - SESSION_MANAGER - INFO - Janitor background thread active.
+12:37:43 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+12:37:43 - GEO_CONTROLLER - INFO - GeoServiceController inti
+12:37:43 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+12:38:15 - PM_CONTROLLER - INFO - [API] Mode B Request: [{'file': 'pm_lte_kpi.csv', 'kpi': 'DL Data Volume'}] cells: ['LSO264O', 'LSO264P', 'LSO264Q', 'LSO264X', 'LSO264Y', 'LSO264Z']
+12:38:15 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+12:41:02 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+12:41:02 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+12:42:44 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+12:42:44 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/lte prb.csv
+12:42:46 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+12:47:31 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+12:47:31 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/lte prb.csv
+12:47:33 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+12:48:12 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+12:48:12 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/lte prb.csv
+12:48:13 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+12:48:48 - PM_CONTROLLER - INFO - [API] Mode B Request: [{'file': 'lte prb.csv', 'kpi': 'UL PRB USAGE Rate %'}] cells: ['LSO109O', 'LSO109P', 'LSO109Q', 'LSO109X', 'LSO109Y', 'LSO109Z']
+12:48:48 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+14:17:42 - SESSION_MANAGER - INFO - Janitor background thread active.
+14:17:42 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+14:17:42 - GEO_CONTROLLER - INFO - GeoServiceController inti
+14:17:42 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+14:17:48 - SESSION_MANAGER - INFO - Janitor background thread active.
+14:17:48 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+14:17:48 - GEO_CONTROLLER - INFO - GeoServiceController inti
+14:17:48 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+14:19:03 - SESSION_MANAGER - INFO - Janitor background thread active.
+14:19:03 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+14:19:03 - GEO_CONTROLLER - INFO - GeoServiceController inti
+14:19:03 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+14:19:03 - SESSION_MANAGER - INFO - Janitor background thread active.
+14:19:03 - CORE_CONTROLLER - INFO - RF Controller linked to Session Manager.
+14:19:03 - GEO_CONTROLLER - INFO - GeoServiceController inti
+14:19:03 - CORE_CONTROLLER - INFO - RF Controller initialized with GeoLocator Service.
+14:25:25 - PM_CONTROLLER - INFO - [API] Mode B Request: [{'file': 'lte prb.csv', 'kpi': 'UL PRB USAGE Rate %'}] cells: ['LSO109O', 'LSO109P', 'LSO109Q', 'LSO109X', 'LSO109Y', 'LSO109Z']
+14:25:25 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+14:38:38 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Discovery Module
+14:38:38 - PM_CONTROLLER - INFO - >>> Executing module for single path: data/pm/lte prb.csv
+14:38:41 - CORE_CONTROLLER - INFO - Discovery successful: found 1 sites.
+14:39:03 - PM_CONTROLLER - INFO - [API] Mode B Request: [{'file': 'lte prb.csv', 'kpi': 'UL PRB USAGE Rate %'}] cells: ['LSO145O', 'LSO145P', 'LSO145Q', 'LSO145X', 'LSO145Y', 'LSO145Z']
+14:39:03 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+14:39:53 - PM_CONTROLLER - INFO - [API] Mode B Request: [{'file': 'lte prb.csv', 'kpi': 'UL PRB USAGE Rate %'}] cells: ['LSO145O', 'LSO145P', 'LSO145Q', 'LSO145X', 'LSO145Y', 'LSO145Z']
+14:39:53 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+14:40:28 - PM_CONTROLLER - INFO - [API] Mode B Request: [{'file': 'lte prb.csv', 'kpi': 'DL PRB USAGE Rate %'}, {'file': 'lte prb.csv', 'kpi': 'UL PRB USAGE Rate %'}] cells: ['LSO145O', 'LSO145P', 'LSO145Q', 'LSO145X', 'LSO145Y', 'LSO145Z']
+14:40:28 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module
+14:40:53 - PM_CONTROLLER - INFO - [API] Mode B Request: [{'file': 'lte prb.csv', 'kpi': 'DL PRB USAGE Rate %'}, {'file': 'lte prb.csv', 'kpi': 'UL PRB USAGE Rate %'}] cells: ['LSO145O', 'LSO145P', 'LSO145Q', 'LSO145X', 'LSO145Y', 'LSO145Z']
+14:40:53 - PM_CONTROLLER - INFO - >>> Relay to ADVANCED PM Extraction Module

@@ -1,6 +1,0 @@
-[submodule "module/module/pm-file-discovery-module"]
-	path = module/module/pm-file-discovery-module
-	url = https://github.com/walidnxt123456-sudo/pm-file-discovery-module.git
-[submodule "backend_engine/module/pm-file-discovery-module"]
-	path = backend_engine/module/pm-file-discovery-module
-	url = https://github.com/walidnxt123456-sudo/pm-file-discovery-module.git

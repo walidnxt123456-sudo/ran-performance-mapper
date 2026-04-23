@@ -20,22 +20,48 @@ async def read_root():
     return "frontend/index.html"
 
 # This is our specific endpoint for Site Discovery
+"""
+    Data structure for the JSON input instructions:
+    
+    mode: str = "discovery"  # "discovery" / "extraction"
+    center: lon, lat
+    technology: 4g/5g
+    limit: int
+
+"""
+# This will use the default "discovery" mode
 @app.post("/api/find-nearest")
 async def find_nearest(data: dict):
     # Pass the JSON directly to the controller for logging
-    return rf_brain.process_site_discovery(data)
-    
+    print(data)
+    return rf_brain.process_request(data)
+
+
+# This is our specific endpoint for kpi fetch
+"""
+fetch_kpi
+if pm-file-discovery-module is integrated then use:
+    Data structure for the JSON input instructions.
+    Ensures type safety across the module.
+class ModuleConfig:
+    file_path: str
+    mode: str = "discovery"  # "discovery" / "extraction"
+    kpi_identity_column: Optional[str] = None
+    site_identity_column: Optional[str] = None
+    cell_identity_column: Optional[str] = None
+    date_identity_column: Optional[str] = None
+    hour_identity_column: Optional[str] = None
+    extraction_mode: str = "avg" # "avg" / "bh"
+    target_date: List[str] = field(default_factory=list)
+    target_cells: List[str] = field(default_factory=list)
+"""    
 @app.post('/api/fetch-kpi')  # Correct FastAPI syntax
 async def fetch_kpi(data: dict):
-    # Log the request for Mode B
+    # Ensure this JSON has "mode": "extraction"
+    # (Or hardcode it here before passing to the brain)
+    data["mode"] = "extraction"
     print(f"[API] Mode B Request: {data.get('kpi_name')} from {data.get('file_name')}")
-    
-    result = rf_controller.pm_manager.fetch_kpi_layer(
-        file_name=data['file_name'],
-        kpi_name=data['kpi_name'],
-        cell_list=data['cells']
-    )
-    return result
+    return rf_brain.process_request(data)
 
 if __name__ == "__main__":
     import uvicorn

@@ -35,6 +35,7 @@ const UIController = {
 			// 2. Render PM Discovery (Mode A)
 			if (response.pm_discovery) {
 				PmUIController.renderDiscovery(response.pm_discovery);
+				PmUIController.lastSitesData = response.sites;
 			}
 
 			MapManager.map.flyTo([payload.center.lat, payload.center.lon], 15);

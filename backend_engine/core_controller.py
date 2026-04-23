@@ -26,6 +26,25 @@ class RFController:
         
         log.info("RF Controller initialized with GeoLocator Service.")
 
+    def process_request(self, data: dict) -> dict:
+        """
+        New Main Entry Point: 
+        Branches to Discovery or Extraction based on the 'mode' key.
+        """
+        
+        # Default to discovery if 'mode' is missing or set to 'discovery'
+        mode = data.get("mode", "discovery")
+        
+        if mode == "discovery":
+            return self.process_site_discovery(data)
+            
+        elif mode == "extraction":
+            # We call the PM manager directly for KPI values
+            return self.pm_manager.fetch_kpi_layer(data)
+            
+        else:
+            return {"success": False, "message": f"Unknown mode: {mode}"}
+    
     def process_site_discovery(self, data: dict) -> dict:
         """
         Handles 'Apply Selection' requests from the frontend.
@@ -50,72 +69,51 @@ class RFController:
                     "success": False, 
                     "message": "Missing required parameters: center or technologies."
                 }
-
-            # 2. Execution: Call the GeoLocator Service
-            # The service handles the Haversine math and CSV grouping.
-            #service_response = self.geo_locator.find_nearest_sites(data)
-            try:
-                print("self.geo_manager.handle_site_discovery(data)")
-                print(data)
-                ##################### Physical Site Discovery
-                # 1. Forward the request to the Manager
-                service_response = self.geo_manager.handle_site_discovery(data)
-                is_success = service_response.get("status") == "success"
-                print("is_success")
-                print(is_success)
-                # 2. Return standardized response
-                final_response = {
-                    "success": is_success,
-                    "count": len(service_response.get("sites", [])),
-                    "sites": service_response.get("sites", []),
-                    "message": "Discovery successful" if is_success else "No data found"
-                }
-                
-               # --- SEE THE OUTBOUND JSON ---
-                if self.verbose:
-                    import json
-                    print("\n" + "🚀 " * 15)
-                    print("[CORE_CONTROLLER] OUTBOUND JSON TO FRONTEND")
-                    # indent=2 makes it readable in your terminal
-                    print(json.dumps(service_response, indent=2))
-                    print("🚀 " * 15 + "\n")
-                # -----------------------------------------
-                
-                ############# PM Discovery (Discovery Mode)
-                pm_res = self.pm_manager.discover_pm_assets()
             
-            except Exception as e:
-                log.error(f"Error during site discovery: {str(e)}")
-                return {"success": False, "message": str(e)}
-          
-            # 3. Translation: Map Service output to a Controller Response
-            if service_response.get("status") == "success":
+            # 2. Physical Site Discovery
+            # We call the geo_manager to query the database/CSV for nearest sites
+            service_response = self.geo_manager.handle_site_discovery(data)
+            
+            # 3. PM Asset Discovery (Mode A)
+            # We scan the data folders to see what KPIs/Files are available
+            pm_res = self.pm_manager.discover_pm_assets(data)
+            pm_data = pm_res.get("data", []) if pm_res.get("status") == "success" else []
+            
+            
+            # 4. Handle Response States
+            status = service_response.get("status")
+            sites = service_response.get("sites", [])
+            
+            if status == "success":
+                if self.verbose:
+                    log.info(f"Discovery successful: found {len(sites)} sites.")
                 return {
                     "success": True,
-                    "count": len(service_response.get("sites", [])),
-                    "sites": service_response["sites"],
-                    "pm_discovery": pm_res.get("data", []), # For PM sidebar
+                    "count": len(sites),
+                    "sites": sites,
+                    "pm_discovery": pm_data,  # This populates the sidebar tree
                     "message": "Discovery successful"
                 }
-            elif service_response.get("status") == "empty":
+            elif status == "empty":
                 return {
                     "success": True,
                     "count": 0,
                     "sites": [],
-                    "message": "No sites found matching your criteria in the local database."
+                    "pm_discovery": pm_data, # Still show files even if no sites found
+                    "message": "No sites found in this area."
                 }
             else:
                 return {
                     "success": False,
-                    "message": service_response.get("message", "Unknown service error.")
+                    "message": service_response.get("message", "Unknown geo-service error.")
                 }
-
         except Exception as e:
-            log.error(f"Error during site discovery: {str(e)}")
+            log.error(f"Critical failure in process_site_discovery: {str(e)}")
             return {
                 "success": False, 
                 "message": f"Internal Controller Error: {str(e)}"
             }
+                
 
     def _log_inbound_request(self, data: dict):
         """Helper for clean console debugging."""
