@@ -3,164 +3,201 @@
 const PmUIController = {
     containerId: 'pm-tree-container',
     sectionId: 'pm-discovery-section',
-    kpiCache: {}, // Stores data like: { "file|kpi": { "cell1": -95, "cell2": -105 } }
-	lastDiscoveryData: null, // Store the full discovery JSON here
-	lastSitesData: null,
+    lastDiscoveryData: null,
+    lastSitesData: null,
 
-	getDiscoveryCellIds() {
-		if (!this.lastSitesData) return [];
-		
-		return this.lastSitesData.flatMap(site => 
-        site.sectors.map(sector => sector.cell)
-		);
-	},
-	
-	_excelDateToString(serial) {
-		const num = parseFloat(serial);  // handles "45992.0" and 45992 both
-		if (isNaN(num)) return String(serial);  // fallback if not a number
-		const date = new Date((num - 25569) * 86400 * 1000);
-		if (isNaN(date.getTime())) return String(serial);  // fallback if invalid date
-		return date.toISOString().split('T')[0];
-	},
+    getDiscoveryCellIds() {
+        if (!this.lastSitesData) return [];
+        return this.lastSitesData.flatMap(site =>
+            site.sectors.map(sector => sector.cell)
+        );
+    },
+
+    _safeId(fileName) {
+        return fileName.replace(/[^a-z0-9]/gi, '_');
+    },
 
     renderDiscovery(files) {
-		this.lastDiscoveryData = files; // Save the JSON received from backend
+        this.lastDiscoveryData = files;
         const container = document.getElementById(this.containerId);
         const section = document.getElementById(this.sectionId);
-		
-		//------
-		// Collect all unique columns across all files
-		const allColumns = [...new Set(files.flatMap(f => f.all_columns || []))];
-		const detectedDateCol = files[0]?.detected_date_col || null;
-		const detectedHourCol = null; // no auto-detect for hour, user picks manually
-		const detectedCellCol = null; // no auto-detect for cell, user picks manually
-
-		const cellColSelect = document.getElementById('pm-cell-col-select');
-		const dateColSelect = document.getElementById('pm-date-col-select');
-		const hourColSelect = document.getElementById('pm-hour-col-select');
-
-		cellColSelect.innerHTML = allColumns
-			.map(col => `<option value="${col}">${col}</option>`)
-			.join('');
-
-		dateColSelect.innerHTML = allColumns
-			.map(col => `<option value="${col}" ${col === detectedDateCol ? 'selected' : ''}>${col}</option>`)
-			.join('');
-
-		hourColSelect.innerHTML = allColumns
-			.map(col => `<option value="${col}">${col}</option>`)
-			.join('');
-
-
-		//------
-		
         if (!files || files.length === 0) return;
-		
-		// Collect all unique dates across all files and convert them
-		const rawDates = [...new Set(files.flatMap(f => f.date_available || []))].sort();
-
-		const dateRow = document.querySelector('#pm-discovery-section .input-row');
-		dateRow.innerHTML = `
-			<label>Date:</label>
-			<select id="pm-date-select">
-				${rawDates.map(d => `<option value="${d}">${d}</option>`).join('')}
-			</select>
-		`;
-
         section.style.display = 'block';
         container.innerHTML = files.map(file => this._buildFileHtml(file)).join('');
     },
 
-    _buildFileHtml(file) {
-        return `
-            <div class="pm-file-group">
-                <div class="pm-file-header" onclick="PmUIController.toggleFolder(this)">
-                    <span class="toggle-icon">[+]</span> 📄 ${file.file_name}
-                </div>
-                <ul class="pm-kpi-list" style="display: none;">
-                    ${file.kpis.map(kpi => `
-                        <li class="kpi-item" data-file="${file.file_name}" data-kpi="${kpi}">
-                            <div class="kpi-row">
-                                <label class="kpi-label">
-                                    <input type="checkbox" onchange="PmUIController.handleToggle(this)">
-                                    ${kpi}
-                                </label>
-                                <div class="vis-switcher" style="display: none;">
-                                    <span class="vis-opt" onclick="PmUIController.setMode('${file.file_name}', '${kpi}', 1)">(M1)</span>
-                                    <span class="vis-opt" onclick="PmUIController.setMode('${file.file_name}', '${kpi}', 2)">(M2)</span>
-                                    <span class="vis-opt" onclick="PmUIController.setMode('${file.file_name}', '${kpi}', 3)">(M3)</span>
-                                </div>
-                            </div>
-                        </li>
-                    `).join('')}
-                </ul>
-            </div>
-        `;
-    },
+	_buildFileHtml(file) {
+		const sid = this._safeId(file.file_name);
+		const column_avai = file.column_list || [];
+		const date_av = file.date_available || [];
 
-	async handleToggle(checkbox) {
-		const item = checkbox.closest('.kpi-item');
-		const switcher = item.querySelector('.vis-switcher');
+		// 1. Create options for the specific DATES found in the file (e.g., "13/04/2026")
+		const dateOptions = date_av.map(d => `<option value="${d}">${d}</option>`).join('');
+		const dateOptionsNone = `<option value="">(none)</option>` + dateOptions;
 
-		if (checkbox.checked) {
-			switcher.style.display = 'inline-flex';
-		} else {
-			switcher.style.display = 'none';
-			// clear from cache if needed later
-			const { file, kpi } = item.dataset;
-			delete this.kpiCache[`${file}|${kpi}`];
-		}
+		// 2. Create options for the COLUMN names (e.g., "EUtranCell Id")
+		const colOptions = column_avai.map(col => `<option value="${col}">${col}</option>`).join('');
+		const colOptionsNone = `<option value="">(none)</option>` + colOptions;
+
+		// 3. Create clickable badges (Fixing the variable names here)
+		const kpiBadges = column_avai.map(item =>
+			`<span class="kpi-badge" onclick="PmUIController.assignKpi('${sid}', '${item}')" title="Click to assign">${item}</span>`
+		).join('');
+
+		return `
+		<div class="pm-file-group" data-file-path="${file.file_path || file.file_name}" data-sid="${sid}">
+			<div class="pm-file-header" onclick="PmUIController.toggleFolder(this)">
+				<span class="toggle-icon">[+]</span> 📄 ${file.file_name}
+			</div>
+			
+			<div class="pm-file-body" style="display:none; padding: 10px;">
+				
+				<div class="input-row">
+					<label>Aggregation:</label>
+					<select id="pm-agg-${sid}">
+						<option value="bh">Busy Hour</option>
+						<option value="avg">Average</option>
+					</select>
+				</div>
+
+				<div class="input-row">
+					<label>Target Date:</label>
+					<select id="pm-date-val-${sid}">
+						${dateOptionsNone}
+					</select>
+				</div>
+
+				<div class="input-row">
+					<label>Date Column:</label>
+					<select id="pm-date-col-${sid}">
+						${colOptionsNone}
+					</select>
+				</div>
+
+				<div class="input-row">
+					<label>Cell Column:</label>
+					<select id="pm-cell-col-${sid}">
+						${colOptionsNone}
+					</select>
+				</div>
+
+				<div class="input-row">
+					<label>Hour Column:</label>
+					<select id="pm-hour-col-${sid}">
+						${colOptionsNone}
+					</select>
+				</div>
+
+
+				<div class="input-row">
+					<label>KPI 1:</label>
+					<select id="pm-kpi1-${sid}">${colOptionsNone}</select>
+				</div>
+				<div class="input-row">
+					<label>KPI 2:</label>
+					<select id="pm-kpi2-${sid}">${colOptionsNone}</select>
+				</div>
+			</div>
+		</div>`;
 	},
 
-    setMode(file, kpi, mode) {
-        const data = this.kpiCache[`${file}|${kpi}`];
-        console.log(`Visualizing ${kpi} using Mode ${mode}`, data);
-        // This will call the future Visualization Engine
+
+
+    // Clicking a badge fills the first empty KPI slot (1 → 2 → 3)
+    assignKpi(sid, kpi) {
+        for (let i = 1; i <= 3; i++) {
+            const sel = document.getElementById(`pm-kpi${i}-${sid}`);
+            if (sel && sel.value === '') {
+                sel.value = kpi;
+                return;
+            }
+        }
+        // All slots filled — overwrite slot 3
+        const sel = document.getElementById(`pm-kpi3-${sid}`);
+        if (sel) sel.value = kpi;
     },
 
     toggleFolder(el) {
-        const list = el.nextElementSibling;
+        const body = el.nextElementSibling;
         const icon = el.querySelector('.toggle-icon');
-        const isHidden = list.style.display === 'none';
-        list.style.display = isHidden ? 'block' : 'none';
+        const isHidden = body.style.display === 'none';
+        body.style.display = isHidden ? 'block' : 'none';
         icon.innerText = isHidden ? '[-]' : '[+]';
     },
-	
+
+    _buildPayload(group) {
+        const sid = group.dataset.sid;
+        const filePath = group.dataset.filePath;
+
+        const dateValue      = document.getElementById(`pm-date-val-${sid}`)?.value || '';
+        const extractionMode = document.getElementById(`pm-agg-${sid}`)?.value || 'avg';
+        const cellCol        = document.getElementById(`pm-cell-col-${sid}`)?.value || '';
+        const dateCol        = document.getElementById(`pm-date-col-${sid}`)?.value || '';
+        const hourColRaw     = document.getElementById(`pm-hour-col-${sid}`)?.value || '';
+        const hourCol        = hourColRaw === '' ? null : hourColRaw;
+
+        const kpiCols = [
+            document.getElementById(`pm-kpi1-${sid}`)?.value,
+            document.getElementById(`pm-kpi2-${sid}`)?.value,
+            document.getElementById(`pm-kpi3-${sid}`)?.value,
+        ].filter(v => v && v !== '');
+
+        if (!cellCol || !dateCol || kpiCols.length === 0) return null;
+
+        return {
+            mode: "extraction",
+            file_path: filePath,
+            cell_identity_column: cellCol,
+            date_identity_column: dateCol,
+            hour_identity_column: hourCol,
+            extraction_mode: extractionMode,
+			target_kpi: kpiCols,
+            target_date: dateValue ? [String(dateValue)] : [],
+            target_cells: this.getDiscoveryCellIds()
+        };
+    },
+
 	async triggerExtraction() {
-		// 1. Get Mandatory Date
-		const dateValue = document.getElementById('pm-date-select').value;
-		if (!dateValue) {
-			alert("Target Date is mandatory.");
+		const groups = document.querySelectorAll('.pm-file-group');
+		const taskList = [];
+
+		// 1. Gather all the individual file settings
+		groups.forEach(group => {
+			const task = this._buildPayload(group);
+			if (task) {
+				// Clean up the task: remove 'mode' if it was added in _buildPayload
+				// so it strictly matches the ExtractionTask schema
+				delete task.mode; 
+				taskList.push(task); 
+			}
+		});
+
+		if (taskList.length === 0) {
+			alert("Please configure at least one file (select Cell, Date, and KPIs).");
 			return;
 		}
 
-		// 2. Get Selected KPIs (from your existing checkboxes)
-		const selected = Array.from(document.querySelectorAll('.kpi-item input:checked'))
-			.map(input => ({
-				file: input.closest('.kpi-item').dataset.file,
-				kpi: input.closest('.kpi-item').dataset.kpi
-			}));
-
-		if (selected.length === 0) {
-			alert("Please select at least one KPI.");
-			return;
-		}
-
-		// 3. Get Cell IDs from the Discovery JSON (as requested)
-		const cellList = this.getDiscoveryCellIds();
-
-		const payload = {
+		// 2. Wrap them into the BatchExtractionRequest
+		const finalRequest = {
 			mode: "extraction",
-			target_date: [String(dateValue)],
-			extraction_mode: document.getElementById('pm-agg-mode').value === 'busy_hour' ? 'bh' : 'avg',
-			cell_identity_column: document.getElementById('pm-cell-col-select').value,
-			date_identity_column: document.getElementById('pm-date-col-select').value,
-			hour_identity_column: document.getElementById('pm-hour-col-select').value,
-			cells: cellList,
-			kpi_selection: selected
+			tasks: taskList 
 		};
 
-		console.log("[PM_UI] Bulk Extraction Payload:", payload);
-		return await ApiService.post('/api/fetch-kpi', payload);
+		console.log("[PM_UI] Sending Batch Request to Backend:", finalRequest);
+
+		// 3. Send and handle the response
+		try {
+			const response = await ApiService.post('/api/fetch-kpi', finalRequest);
+			
+			if (response.success) {
+				console.log("Extraction successful!", response.results_by_file);
+				return response; // Return the actual data
+			} else {
+				console.error("Backend error:", response.message);
+				alert("Extraction failed: " + response.message);
+			}
+		} catch (err) {
+			console.error("Network or System error:", err);
+		}
 	}
 };

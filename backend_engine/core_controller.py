@@ -28,7 +28,7 @@ class RFController:
 
     def process_request(self, data: dict) -> dict:
         """
-        New Main Entry Point: 
+        Main Entry Point: 
         Branches to Discovery or Extraction based on the 'mode' key.
         """
         
@@ -38,32 +38,25 @@ class RFController:
         if mode == "discovery":
             return self.process_site_discovery(data)
             
-        elif mode == "extraction":
-            # We call the PM manager directly for KPI values
+        elif mode in ["extraction", "extraction_batch"]:
+            # Direct relay to PM manager for batch processing
+            log.info(f">>> Routing to PM Batch Extraction (Mode: {mode})")
+            log.info(data)
             return self.pm_manager.fetch_kpi_layer(data)
             
         else:
+            log.error(f"Unknown Request Mode: {mode}")
             return {"success": False, "message": f"Unknown mode: {mode}"}
     
     def process_site_discovery(self, data: dict) -> dict:
         """
-        Handles 'Apply Selection' requests from the frontend.
-        Coordinates the discovery of the N nearest physical sites.
-        
-        Args:
-            data (dict): Standardized Request JSON containing:
-                - 'center': {'lat': float, 'lon': float}
-                - 'technologies': list (e.g., ["4G", "5G"])
-                - 'limit': int (number of sites to return)
-        
-        Returns:
-            dict: Standardized Response JSON for the Frontend.
+        Flow 1: Coordinates Site Discovery and PM File Scanning.
         """
         if self.verbose:
             self._log_inbound_request(data)
 
         try:
-            # 1. Validation: Ensure required keys exist before processing
+            # 1. Parameter Validation
             if not data.get('center') or not data.get('technologies'):
                 return {
                     "success": False, 
@@ -72,41 +65,43 @@ class RFController:
             
             # 2. Physical Site Discovery
             # We call the geo_manager to query the database/CSV for nearest sites
-            service_response = self.geo_manager.handle_site_discovery(data)
+            geo_service_response = self.geo_manager.handle_site_discovery(data)
             
-            # 3. PM Asset Discovery (Mode A)
-            # We scan the data folders to see what KPIs/Files are available
-            pm_res = self.pm_manager.discover_pm_assets(data)
-            pm_data = pm_res.get("data", []) if pm_res.get("status") == "success" else []
-            
+            # 3. Scan PM File Assets (PM-Service)
+            # Alignment: pm_manager now returns 'pm_discovery' as the list key
+            pm_service_controller_response = self.pm_manager.discover_pm_assets(data)
+            log.info(">>>Core Controller - pm_service_controller_response:")
+            log.info(pm_service_controller_response)
             
             # 4. Handle Response States
-            status = service_response.get("status")
-            sites = service_response.get("sites", [])
+            # The pm_data is now injected into the final successful response
+            geo_status = geo_service_response.get("status")
+            sites = geo_service_response.get("sites", [])
             
-            if status == "success":
-                if self.verbose:
-                    log.info(f"Discovery successful: found {len(sites)} sites.")
-                return {
+            if geo_status in ["success", "empty"]:
+                # Even if no sites are found (empty), we still consider the request a success
+                # so the frontend can display the PM files found in the area
+                msg = "Discovery successful" if geo_status == "success" else "No sites found in this area."
+                
+                SiteDiscoveryResponse = {
                     "success": True,
                     "count": len(sites),
                     "sites": sites,
-                    "pm_discovery": pm_data,  # This populates the sidebar tree
-                    "message": "Discovery successful"
+                    "pm_discovery": pm_service_controller_response,  # From Step 2
+                    "message": msg
                 }
-            elif status == "empty":
-                return {
-                    "success": True,
-                    "count": 0,
-                    "sites": [],
-                    "pm_discovery": pm_data, # Still show files even if no sites found
-                    "message": "No sites found in this area."
-                }
+                log.info(">>>Core Controller - Discovery response to FrontEND")
+                log.info(SiteDiscoveryResponse)
+                return SiteDiscoveryResponse
+                
             else:
+                # Handle explicit errors from the GeoService
                 return {
                     "success": False,
-                    "message": service_response.get("message", "Unknown geo-service error.")
+                    "message": geo_service_response.get("message", "Unknown geo-service error.")
                 }
+            
+            
         except Exception as e:
             log.error(f"Critical failure in process_site_discovery: {str(e)}")
             return {

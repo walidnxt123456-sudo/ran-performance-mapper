@@ -1,15 +1,16 @@
+#ran-performance-mapper\backend_engine\module\pm_file_discovery_module\discovery_main.py
 import json
 import sys
-from models import InputDiscoveryConfig, InputExtractionConfig
-from file_adapter import FileAdapter
-from analytic_engine import AnalyticEngine
+from .models import InputDiscoveryConfig, InputExtractionConfig
+from .file_adapter import FileAdapter
+from .analytic_engine import AnalyticEngine
 
 class DiscoveryModule:
     PM_KEYWORDS = ["Date", "ERBS Id", "EUtranCell Id", "Object", "DATE_ID", "NE Name", "HOUR", "HOUR_ID", "CELL", "CELL_ID", "CELLID"]
 
     def __init__(self, json_input: str):
         try:
-            data = json.loads(json_input)
+            data = json.loads(json_input) if isinstance(json_input, str) else json_input
             mode = data.get("mode", "discovery")
             if mode == "discovery":
                 self.config = InputDiscoveryConfig(**data)

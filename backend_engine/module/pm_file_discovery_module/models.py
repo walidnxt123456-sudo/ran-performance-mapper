@@ -1,3 +1,4 @@
+#ran-performance-mapper\backend_engine\module\pm_file_discovery_module\models.py
 from dataclasses import dataclass, field
 from typing import List, Optional, Dict, Any, Union
 
@@ -17,7 +18,6 @@ class OuputDiscoveryConfig:
     file_path: str
     mode: str = "discovery"
     column_list: List[str] = field(default_factory=list)
-    cells_available: List[str] = field(default_factory=list)
     date_available: List[str] = field(default_factory=list)
     hour_column_found: Optional[str] = None  # Returns the name of the hour col if detected
 

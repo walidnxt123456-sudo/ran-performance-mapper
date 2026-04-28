@@ -40,20 +40,6 @@ async def find_nearest(data: dict):
 # This is our specific endpoint for kpi fetch
 """
 fetch_kpi
-if pm-file-discovery-module is integrated then use:
-    Data structure for the JSON input instructions.
-    Ensures type safety across the module.
-class ModuleConfig:
-    file_path: str
-    mode: str = "discovery"  # "discovery" / "extraction"
-    kpi_identity_column: Optional[str] = None
-    site_identity_column: Optional[str] = None
-    cell_identity_column: Optional[str] = None
-    date_identity_column: Optional[str] = None
-    hour_identity_column: Optional[str] = None
-    extraction_mode: str = "avg" # "avg" / "bh"
-    target_date: List[str] = field(default_factory=list)
-    target_cells: List[str] = field(default_factory=list)
 """    
 @app.post('/api/fetch-kpi')  # Correct FastAPI syntax
 async def fetch_kpi(data: dict):

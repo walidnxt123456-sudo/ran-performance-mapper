@@ -12,11 +12,6 @@
 
     <header class="top-bar">
         <div class="logo">RF Optimizer</div>
-        <div class="path-inputs">
-            <input type="text" id="lte-path" placeholder="LTE CSV Path...">
-            <input type="text" id="nr-path" placeholder="NR CSV Path...">
-            <button id="btn-connect" class="btn-primary">Connect All</button>
-        </div>
         <div id="status-badge" class="badge">Disconnected</div>
     </header>
 
@@ -69,35 +64,6 @@
 				<button id="btn-pm-extraction" class="btn-primary" style="width: 100%; margin-top: 10px;">
 					Pm Extraction
 				</button>
-				
-				<div class="input-row" style="margin-bottom: 10px;">
-					<label>Date:</label>
-					<input type="date" id="pm-date-select">
-				</div>
-				
-				<div class="input-row" style="margin-bottom: 10px;">
-					<label>Aggregation:</label>
-					<select id="pm-agg-mode">
-						<option value="busy_hour">Busy Hour</option>
-						<option value="average">Average</option>
-					</select>
-				</div>
-				
-				<div class="input-row" style="margin-bottom: 10px;">
-					<label>Cell Column:</label>
-					<select id="pm-cell-col-select"></select>
-				</div>
-				
-				<div class="input-row" style="margin-bottom: 10px;">
-					<label>Date Column:</label>
-					<select id="pm-date-col-select"></select>
-				</div>
-				
-				<div class="input-row" style="margin-bottom: 10px;">
-					<label>Hour Column:</label>
-					<select id="pm-hour-col-select"></select>
-				</div>
-
 				
 				<div id="pm-tree-container" class="pm-tree"></div>
 			</section>

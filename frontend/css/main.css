@@ -218,3 +218,16 @@ body, html {
     background: #3498db;
     color: white;
 }
+.kpi-badge {
+    display: inline-block;
+    background: #2a3a4a;
+    color: #7ecfff;
+    border: 1px solid #3a5a7a;
+    border-radius: 3px;
+    padding: 2px 7px;
+    margin: 2px 3px 2px 0;
+    font-size: 11px;
+    cursor: pointer;
+}
+.kpi-badge:hover { background: #3a5a7a; }
+.pm-kpi-badges { margin-top: 10px; line-height: 1.8; }
