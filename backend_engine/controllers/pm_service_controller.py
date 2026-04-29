@@ -169,20 +169,23 @@ class PmServiceController:
                                     "date": task["target_date"][0] if task.get("target_date") else "N/A",
                                     "extraction_mode": task.get("extraction_mode", "bh"),
                                     "file_name": file_name,
-                                    "busy_hour": kpi_data.get("busy_hour")
+                                    "busy_hour": str(kpi_data.get("busy_hour")) if kpi_data.get("busy_hour") else None
                                 }
+                        # 4. Store results for this specific file matching FileResult schema
+                        results_by_file[file_name] = {
+                            "cells": formatted_cells,
+                            "metadata": {
+                                "found_cells_count": len(formatted_cells),
+                                "missing_cells": raw_result.get("missing_cells", []),
+                                "extraction_date": task["target_date"][0] if task.get("target_date") else "N/A"
+                            }
+                        }
+                        log.info(f"Batch Extraction Finished. Processed {len(results_by_file)} files.")
+                        
                 except Exception as e:
                     log.error(f"Extraction failed for {file_name}: {str(e)}")
 
-            # 4. Store results for this specific file
-            results_by_file[file_name] = {
-                "cell_results": formatted_cells,
-                "missing_cells": raw_result.get("missing_cells", []),
-                "found_cells_count": len(formatted_cells)
-            }
-
-        log.info(f"Batch Extraction Finished. Processed {len(results_by_file)} files.")
-        
+        # 5. Return matching ExtractionResponse schema
         return {
             "success": True,
             "results_by_file": results_by_file

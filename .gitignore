@@ -22,3 +22,5 @@ data/cell_file/*
 # IDEs
 .vscode/
 .idea/
+
+*.log
