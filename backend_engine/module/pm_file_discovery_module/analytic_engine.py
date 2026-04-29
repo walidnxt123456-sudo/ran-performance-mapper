@@ -2,6 +2,9 @@ import sys
 import pandas as pd
 from typing import Dict, Any
 import json
+from backend_engine.utils.debug_logger import setup_logger
+
+log = setup_logger("PM_DISCOVERY_MODULE")
 
 class AnalyticEngine:
     """
@@ -14,12 +17,16 @@ class AnalyticEngine:
         self.processed_kpis = []
         self.processed_cells = []
 
-    def process_extraction(self, df: pd.DataFrame, config: Any):
+    def process_extraction(self, df: pd.DataFrame, config: any):
         cid = config.cell_identity_column
         day = config.date_identity_column
         hour = getattr(config, 'hour_identity_column', None)
 
         kpi_cols = config.kpi_identity_column
+        
+        log.info(">>>PM_DISCOVERY_MODULE process_extraction")
+        log.info(f">>>PM_DISCOVERY_MODULE process_extraction: {config}")
+        
         if isinstance(kpi_cols, str):
             kpi_cols = [kpi_cols]
         
@@ -121,5 +128,5 @@ class AnalyticEngine:
         return {
             "processed_kpis": self.processed_kpis,
             "processed_cells": self.processed_cells,
-            "data": self.results
+            "results": self.results
         }

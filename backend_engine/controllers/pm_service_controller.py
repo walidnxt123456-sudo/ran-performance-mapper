@@ -140,19 +140,25 @@ class PmServiceController:
                 "file_path": file_path,
                 "cell_identity_column": task.get("cell_identity_column"),
                 "date_identity_column": task.get("date_identity_column"),
+                "hour_identity_column": task.get("hour_identity_column"),
+                
                 "kpi_identity_column": task.get("target_kpi") or task.get("kpi_identity_column"),
                 "extraction_mode": task.get("extraction_mode", "bh"),
                 "target_date": task.get("target_date", []),
-                "target_cells": task.get("target_cells", []),
-                "hour_identity_column": task.get("hour_identity_column")
+                "target_cells": task.get("target_cells", [])
             }
+            #log.info(payload)
 
             if self._is_advanced_available():
+                log.info(f"Processing Task advanced_available: {payload}")
                 try:
                     raw_result = self._run_module(payload)
+                    log.info(f"Processing Task advanced_available raw_result:")
+                    log.info(f"Processing Task advanced_available raw_result: {raw_result}")
                     
                     if raw_result.get("status") == "success":
                         internal_data = raw_result.get("results", {})
+                        log.info(f"Processing Task advanced_available Success: {internal_data}")
                         
                         # 3. Format results to match KPIValue schema
                         for cell_id, kpis in internal_data.items():

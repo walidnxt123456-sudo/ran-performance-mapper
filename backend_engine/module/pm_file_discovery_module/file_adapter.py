@@ -3,6 +3,10 @@ import csv
 from pathlib import Path
 from typing import Generator, Tuple, Optional
 
+from backend_engine.utils.debug_logger import setup_logger
+
+log = setup_logger("PM_DISCOVERY_MODULE")
+
 class FileAdapter:
     """
     Layer 1: I/O Adapter.
@@ -68,6 +72,9 @@ class FileAdapter:
     def stream_csv_chunks(self, keywords: list) -> Generator[pd.DataFrame, None, None]:
         """Standard CSV streamer for Discovery mode."""
         skip, sep, enc = self._detect_params(keywords)
+        
+        log.info(f">>>PM_DISCOVERY_MODULE stream_csv_chunks: {self.file_path}")
+        
         reader = pd.read_csv(
             self.file_path, sep=sep, skiprows=skip, encoding=enc,
             chunksize=self.chunk_size, decimal=',', engine='python'
