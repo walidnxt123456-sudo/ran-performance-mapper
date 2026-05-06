@@ -23,4 +23,5 @@ data/cell_file/*
 .vscode/
 .idea/
 
-*.log
+*.log*.log
+frontend/Nouveau document texte.txt
