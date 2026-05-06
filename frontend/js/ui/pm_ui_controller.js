@@ -191,6 +191,8 @@ const PmUIController = {
 			
 			if (response.success) {
 				console.log("Extraction successful!", response.results_by_file);
+				const results = response.extraction_results || response.results_by_file;
+				KPIVisualManager.init(results);
 				return response; // Return the actual data
 			} else {
 				console.error("Backend error:", response.message);

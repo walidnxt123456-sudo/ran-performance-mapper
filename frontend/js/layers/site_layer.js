@@ -131,6 +131,13 @@ const SiteLayer = {
 			lat, lon, azimuth, config.radius, config.width
 		);
 
+		const tooltipContent = `
+			<div style="font-size: 1.1em; border-bottom: 1px solid #ccc; margin-bottom: 5px;">
+				<b>Cell:</b> ${cellName}
+			</div>
+			<b>Azi:</b> ${azimuth}°<br>
+			${extraInfo} 
+		`;
 		// 3. Create Polygon with specific color and transparency
 		const polygon = L.polygon(wedgeCoords, {
 			color: config.color,       // Border Color
@@ -139,17 +146,12 @@ const SiteLayer = {
 			weight: 1.5,
 			siteId: siteId,
 			cellName: sector.cell_name,
-			cellId: sector['Cell ID'] || sector.cell_id // STORE THIS FOR EXTRACTION
+			cellId: sector.cell, // STORE THIS FOR EXTRACTION
+			defaultTooltip: tooltipContent
 		});
 
 		// 4. Update Tooltip to show the Band Label
-		polygon.bindTooltip(`
-			<div style="font-size: 1.1em; border-bottom: 1px solid #ccc; margin-bottom: 5px;">
-				<b>Cell:</b> ${cellName}
-			</div>
-			<b>Azi:</b> ${azimuth}°<br>
-			${extraInfo} 
-		`);
+		polygon.bindTooltip(tooltipContent);
 
 		MapManager.registry[tech].addLayer(polygon);
 	},

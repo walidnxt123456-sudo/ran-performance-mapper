@@ -16,6 +16,8 @@
     </header>
 
     <main class="app-layout">
+	
+		
         <aside class="sidebar">
 			<section class="control-group">
 				<h4>Technology Selection</h4>
@@ -73,6 +75,24 @@
         <div id="map-container">
             <div id="map"></div>
         </div>
+
+		<aside class="sidebar-right" id="map-controller-bar">
+			<header class="sidebar-header">
+				<h4>Map Visualization</h4>
+			</header>
+			
+			<div class="visual-actions" style="padding: 10px; border-bottom: 1px solid #ddd; margin-bottom: 10px;">
+				<button id="btn-update-thematic" class="btn-primary" style="width: 48%;">Apply KPI</button>
+				<button id="btn-reset-thematic" class="btn-secondary" style="width: 48%;">Reset Map</button>
+			</div>
+			
+			<div id="kpi-visual-controls" class="control-list">
+				<p class="placeholder-text">Run extraction to see KPI controls...</p>
+			</div>
+		</aside>
+		
+
+
     </main>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -82,6 +102,7 @@
 
 	<script src="/static/js/map/map_manager.js"></script>
 	<script src="/static/js/layers/site_layer.js"></script>
+	<script src="/static/js/ui/kpi_visual_manager.js"></script>
 
 	<script src="/static/js/ui/pm_ui_controller.js"></script>
 	<script src="/static/js/ui/ui_controller.js"></script>

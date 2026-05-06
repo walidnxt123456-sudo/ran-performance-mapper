@@ -35,6 +35,21 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (pm_extraction_Btn) {
 		pm_extraction_Btn.addEventListener('click', () => PmUIController.triggerExtraction());
 	}
+	
+	// 5. Bind Map Visualization Buttons
+	const applyThematicBtn = document.getElementById('btn-update-thematic');
+	if (applyThematicBtn) {
+		applyThematicBtn.addEventListener('click', () => {
+			KPIVisualManager.applyThematic();
+		});
+	}
+
+	const resetThematicBtn = document.getElementById('btn-reset-thematic');
+	if (resetThematicBtn) {
+		resetThematicBtn.addEventListener('click', () => {
+			KPIVisualManager.resetMap();
+		});
+	}
 
     console.log("%c[SYSTEM] All modules linked and ready.", "color: #2ecc71;");
 });
