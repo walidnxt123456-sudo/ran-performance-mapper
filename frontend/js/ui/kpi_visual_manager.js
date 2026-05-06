@@ -145,6 +145,8 @@ const KPIVisualManager = {
 			});
 			
         });
+		
+		this.createLegend(config, activeKPI);
 
         console.log(`[DEBUG] Successfully updated ${updateCount} sectors.`);
     },
@@ -193,6 +195,11 @@ const KPIVisualManager = {
     resetMap() {
         console.log("[VISUAL] Restoring original band colors...");
         
+		if (this.mapLegend) {
+			this.mapLegend.remove();
+			this.mapLegend = null;
+		}
+
         ['4G', '5G'].forEach(tech => {
             MapManager.registry[tech].eachLayer(layer => {
                 // Get the original color (e.g., L800 blue, L1800 orange)
@@ -214,6 +221,39 @@ const KPIVisualManager = {
         const checkboxes = document.querySelectorAll('#kpi-visual-controls input[type="checkbox"]');
         checkboxes.forEach(cb => cb.checked = false);
     },
+	
+	/**
+     * Dynamically creates a map legend based on the current KPI thresholds.
+     */
+    createLegend(config, kpiName) {
+        
+		// Remove existing legend if there is one
+        if (this.mapLegend) {
+            this.mapLegend.remove();
+        }
+
+        const legend = L.control({ position: 'bottomright' });
+
+        legend.onAdd = function () {
+            const div = L.DomUtil.create('div', 'info legend');
+            const thresholds = config.thresholds;
+            const colors = config.colors;
+
+            div.innerHTML = `<strong>${kpiName}</strong><br>`;
+
+            // Range 1: Green (Good)
+            div.innerHTML += `<i style="background:${colors[0]}"></i> < ${thresholds[0]}<br>`;
+            // Range 2: Yellow (Warning)
+            div.innerHTML += `<i style="background:${colors[1]}"></i> ${thresholds[0]} - ${thresholds[1]}<br>`;
+            // Range 3: Red (Critical)
+            div.innerHTML += `<i style="background:${colors[2]}"></i> > ${thresholds[1]}`;
+
+            return div;
+        };
+
+        this.mapLegend = legend;
+        legend.addTo(MapManager.map);
+    },
 
 };
 
@@ -232,3 +272,4 @@ const KPI_METADATA = {
     // Default for unknown KPIs
     'DEFAULT': { direction: 'unknown', unit: '', typicalRange: null }
 };
+

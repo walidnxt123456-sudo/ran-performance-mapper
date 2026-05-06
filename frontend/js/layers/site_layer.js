@@ -9,14 +9,14 @@
  const BAND_CONFIG = {
     // 4G Suffixes
 	// 4G Coverage (e.g., L800 / L900)
-    "O": { radius: 280, width: 70, color: "#3498db", label: "L800" },
-    "P": { radius: 280, width: 70, color: "#3498db", label: "L800" },
-    "Q": { radius: 280, width: 70, color: "#3498db", label: "L800" },
+    "O": { radius: 400, width: 30, color: "#3498db", label: "L800" },
+    "P": { radius: 400, width: 30, color: "#3498db", label: "L800" },
+    "Q": { radius: 400, width: 30, color: "#3498db", label: "L800" },
     
 	// 4G Capacity (e.g., L1800 / L2100)
-    "X": { radius: 180, width: 50, color: "#e67e22", label: "L2100" },
-    "Y": { radius: 180, width: 50, color: "#e67e22", label: "L2100" },
-    "Z": { radius: 180, width: 50, color: "#e67e22", label: "L2100" },
+    "X": { radius: 300, width: 60, color: "#e67e22", label: "L2100" },
+    "Y": { radius: 300, width: 60, color: "#e67e22", label: "L2100" },
+    "Z": { radius: 300, width: 60, color: "#e67e22", label: "L2100" },
 
     // 5G Suffixes
 	// 5G for N78
@@ -114,7 +114,7 @@ const SiteLayer = {
     /**
      * Draws an individual sector wedge
      */
-	_drawSector(siteId, tech, lat, lon, sector) {
+/*	_drawSector(siteId, tech, lat, lon, sector) {
 		const azimuth = sector.azimuth;
 		const cellName = sector.cell_name;
 		// This helper creates a list of all extra parameters
@@ -153,6 +153,52 @@ const SiteLayer = {
 		// 4. Update Tooltip to show the Band Label
 		polygon.bindTooltip(tooltipContent);
 
+		MapManager.registry[tech].addLayer(polygon);
+	},
+*/	
+	/**
+     * Draws an individual sector wedge (Arc Form)
+     */
+	_drawSector(siteId, tech, lat, lon, sector) {
+		const azimuth = sector.azimuth;
+		const cellName = sector.cell_name;
+		
+		const extraInfo = Object.entries(sector)
+			.filter(([key]) => !['cell_name', 'azimuth', 'distance_km'].includes(key))
+			.map(([key, val]) => `<b>${key}:</b> ${val}`)
+			.join('<br>');
+
+		// 1. Get frequency band settings (Radius/Color)
+		const config = this._getBandSettings(cellName);
+
+		// 2. Generate Arc geometry (uses the 5-degree step loop for curves)
+		const wedgeCoords = SpatialUtils.getSectorWedge(
+			lat, lon, azimuth, config.radius, config.width
+		);
+
+		const tooltipContent = `
+			<div style="font-size: 1.1em; border-bottom: 1px solid #ccc; margin-bottom: 5px;">
+				<b>Cell:</b> ${cellName}
+			</div>
+			<b>Azi:</b> ${azimuth}°<br>
+			${extraInfo} 
+		`;
+
+		// 3. Create Polygon (The Wedge)
+		const polygon = L.polygon(wedgeCoords, {
+			color: config.color,       
+			fillColor: config.color,   
+			fillOpacity: 0.4,          
+			weight: 1.5,
+			siteId: siteId,
+			cellName: cellName,
+			cellId: sector.cell, // CRITICAL: This links map objects to PM data
+			defaultTooltip: tooltipContent
+		});
+
+		polygon.bindTooltip(tooltipContent);
+
+		// 4. Add to the correct Leaflet Group (4G or 5G)
 		MapManager.registry[tech].addLayer(polygon);
 	},
 

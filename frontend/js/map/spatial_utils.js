@@ -13,7 +13,8 @@ const SpatialUtils = {
      * @param {number} distance - Length of wedge in meters
      * @param {number} beamwidth - Width of wedge in degrees
      */
-    getSectorWedge(lat, lon, azimuth, distance = 200, beamwidth = 65) {
+/*    
+	getSectorWedge(lat, lon, azimuth, distance = 200, beamwidth = 65) {
         const d_lat = distance / 111320; // Approx meters to lat degrees
         const d_lon = distance / (111320 * Math.cos(lat * (Math.PI / 180)));
 
@@ -31,4 +32,20 @@ const SpatialUtils = {
 
         return [[lat, lon], p1, p2]; // Triangle coordinates for Leaflet
     }
+*/	
+	getSectorWedge(lat, lon, azimuth, distance = 200, beamwidth = 65) {
+		const points = [[lat, lon]]; // Start at the site center
+		const startAngle = azimuth - beamwidth / 2;
+		const endAngle = azimuth + beamwidth / 2;
+
+		// Generate points every 5 degrees to create a curve
+		for (let i = startAngle; i <= endAngle; i += 5) {
+			const rad = i * (Math.PI / 180);
+			const p_lat = lat + (distance / 111320) * Math.cos(rad);
+			const p_lon = lon + (distance / (111320 * Math.cos(lat * Math.PI / 180))) * Math.sin(rad);
+			points.push([p_lat, p_lon]);
+		}
+
+		return points; 
+	}
 };

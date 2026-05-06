@@ -231,3 +231,21 @@ body, html {
 }
 .kpi-badge:hover { background: #3a5a7a; }
 .pm-kpi-badges { margin-top: 10px; line-height: 1.8; }
+
+/* Style for the Map Legend */
+.info.legend {
+    padding: 10px;
+    background: white;
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    line-height: 24px;
+    color: #333;
+}
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.8;
+}

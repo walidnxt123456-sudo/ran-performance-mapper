@@ -95,18 +95,23 @@
 
     </main>
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+	<!-- 1. External Libraries -->
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-    <script src="/static/js/api.js"></script>
+	<!-- 2. Core Logic & Utilities -->
+	<script src="/static/js/api.js"></script>
 	<script src="/static/js/map/spatial_utils.js"></script>
-
 	<script src="/static/js/map/map_manager.js"></script>
+
+	<!-- 3. Layer Managers -->
 	<script src="/static/js/layers/site_layer.js"></script>
 	<script src="/static/js/ui/kpi_visual_manager.js"></script>
 
+	<!-- 4. UI MANAGERS (Crucial: KPIVisualManager must be first) -->
 	<script src="/static/js/ui/pm_ui_controller.js"></script>
 	<script src="/static/js/ui/ui_controller.js"></script>
-	
+
+	<!-- 5. Main Entry Point -->
 	<script src="/static/js/main.js"></script>
 	
 </body>
