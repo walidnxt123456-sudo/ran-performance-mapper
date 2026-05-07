@@ -47,5 +47,34 @@ const SpatialUtils = {
 		}
 
 		return points; 
+	},
+	
+
+	/**
+	 * Creates a ring-slice (annular sector) for distribution KPIs
+	 * @param {number} innerDist - Inner radius in meters
+	 * @param {number} outerDist - Outer radius in meters
+	 */
+	getDistributiveArc(lat, lon, azimuth, innerDist, outerDist, beamwidth = 65) {
+		const points = [];
+		const startAngle = (azimuth - beamwidth / 2) * (Math.PI / 180);
+		const endAngle = (azimuth + beamwidth / 2) * (Math.PI / 180);
+
+		// Outer edge curve[cite: 14]
+		for (let i = startAngle; i <= endAngle; i += 0.05) {
+			points.push([
+				lat + (outerDist / 111320) * Math.cos(i),
+				lon + (outerDist / (111320 * Math.cos(lat * Math.PI / 180))) * Math.sin(i)
+			]);
+		}
+		// Inner edge curve (reverse)[cite: 14]
+		for (let i = endAngle; i >= startAngle; i -= 0.05) {
+			points.push([
+				lat + (innerDist / 111320) * Math.cos(i),
+				lon + (innerDist / (111320 * Math.cos(lat * Math.PI / 180))) * Math.sin(i)
+			]);
+		}
+		return points;
 	}
+	
 };

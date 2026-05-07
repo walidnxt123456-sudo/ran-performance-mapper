@@ -7,23 +7,26 @@ const KPIVisualManager = {
     // Registry of KPI configurations: { kpiName: { enabled, thresholds, colors, showLabels } }
     kpiConfigs: {},
     lastResults: null,
-
+	
     /**
      * Initializes the manager with fresh extraction results
      */
-    init(extractionResults) {
-        this.lastResults = extractionResults;
-        const container = document.getElementById('kpi-visual-controls');
-        container.innerHTML = '';
+	init(extractionResults) {
+		this.lastResults = extractionResults;
+		const container = document.getElementById('kpi-visual-controls');
+		container.innerHTML = '';
 
-        const uniqueKPIs = this._extractUniqueKPIs(extractionResults);
-        
-        uniqueKPIs.forEach(kpiName => {
-            const defaults = this._calculateAutoIntervals(kpiName, extractionResults);
-            this._renderKPICard(kpiName, defaults);
-        });
-    },
-	
+		const uniqueKPIs = this._extractUniqueKPIs(extractionResults);
+		
+		// 1. Add the manual Mapping UI
+		this.renderTAPlotterControls(uniqueKPIs);
+
+		// 2. Add the standard thematic cards
+		uniqueKPIs.forEach(kpiName => {
+			const defaults = this._calculateAutoIntervals(kpiName, extractionResults);
+			this._renderKPICard(kpiName, defaults);
+		});
+	},
 
     /**
      * Finds the min/max for a KPI and creates 3 equal intervals
@@ -46,6 +49,65 @@ const KPIVisualManager = {
             colors: ['#27ae60', '#f1c40f', '#e74c3c'] // Green, Yellow, Red
         };
     },
+	
+	renderTAPlotterControls(uniqueKPIs) {
+        const container = document.getElementById('kpi-visual-controls');
+        
+        const plotterDiv = document.createElement('div');
+        plotterDiv.className = 'kpi-control-card ta-plotter-card';
+        plotterDiv.style.borderLeft = "4px solid #9b59b6"; // Purple for TA
+        
+        const options = uniqueKPIs.map(k => `<option value="${k}">${k}</option>`).join('');
+
+        plotterDiv.innerHTML = `
+            <div style="font-weight:bold; margin-bottom:10px;">📐 Distance Plotter (TA)</div>
+            <div class="input-row">
+                <label>Distance (Index):</label>
+                <select id="ta-vector-select">${options}</select>
+            </div>
+            <div class="input-row">
+                <label>Magnitude (Users):</label>
+                <select id="ta-value-select">${options}</select>
+            </div>
+            <button onclick="KPIVisualManager.applyDistancePlot()" style="width:100%; margin-top:10px;">
+                Generate Distance Rings
+            </button>
+        `;
+        container.prepend(plotterDiv); // Put it at the top of the sidebar
+    },
+
+	applyDistancePlot() {
+		const vectorKey = document.getElementById('ta-vector-select').value;
+		const valueKey = document.getElementById('ta-value-select').value;
+
+		if (!this.lastResults) return;
+
+		MapManager.registry['PM'].clearLayers();
+
+		Object.values(this.lastResults).forEach(file => {
+			Object.entries(file.cells).forEach(([cellId, kpis]) => {
+				const vectorData = kpis[vectorKey]?.value;
+				const samplesData = kpis[valueKey]?.value;
+
+				if (Array.isArray(vectorData) && Array.isArray(samplesData)) {
+					// 1. Find the MAX samples for THIS cell to normalize opacity
+					const maxSamples = Math.max(...samplesData);
+					
+					const loopLength = Math.min(vectorData.length, samplesData.length);
+					for (let i = 0; i < loopLength; i++) {
+						const indexValue = vectorData[i];
+						const sampleCount = samplesData[i];
+						
+						if (sampleCount > 0) {
+							// 2. Calculate relative opacity (Peak = 0.9, Min = 0.1)
+							const opacity = (sampleCount / maxSamples) * 0.9;
+							this.renderSingleTAPlot(cellId, indexValue, sampleCount, Math.max(opacity, 0.1));
+						}
+					}
+				}
+			});
+		});
+	},
 
     _renderKPICard(name, data) {
         // Store in registry
@@ -254,8 +316,98 @@ const KPIVisualManager = {
         this.mapLegend = legend;
         legend.addTo(MapManager.map);
     },
+	
+	/**
+	 * Renders TA Distribution as normalized distance rings
+	 */
+	renderTADistribution(cellId, vectorData) {
+		const site = this._findSiteByCell(cellId);
+		const cellColor = this._generateCellColor(cellId); // One color per cell
+		const maxSamples = Math.max(...vectorData.map(v => v.samples));
+
+		vectorData.forEach(bin => {
+			const opacity = (bin.samples / maxSamples) * 0.9;
+			const coords = SpatialUtils.getDistributiveArc(
+				site.lat, site.lon, site.azimuth, 
+				bin.index * 156, (bin.index + 1) * 156
+			);
+
+			L.polygon(coords, {
+				fillColor: cellColor,
+				fillOpacity: Math.max(opacity, 0.05), // Low count = transparent
+				color: cellColor,
+				weight: 0.5
+			}).addTo(MapManager.registry['PM']);
+		});
+	},
+
+	_generateCellColor(cellId) {
+		let hash = 0;
+		for (let i = 0; i < cellId.length; i++) {
+			hash = cellId.charCodeAt(i) + ((hash << 5) - hash);
+		}
+		return `hsl(${Math.abs(hash % 360)}, 70%, 50%)`;
+	},
+	
+	/**
+	 * Renders a distance-accurate polygon for TA Distribution
+	 * Uses one color per cell with opacity based on user count.
+	 */
+	renderSingleTAPlot(cellId, vectorValue, userCount, calculatedOpacity) {
+		const site = this._findSiteByCell(cellId);
+		if (!site) return;
+
+		const stepMeters = 156; 
+		const centerDistance = vectorValue * stepMeters;
+		const inner = Math.max(0, centerDistance - 75); 
+		const outer = centerDistance + 75;
+
+		const coords = SpatialUtils.getDistributiveArc(
+			site.lat, site.lon, site.azimuth, inner, outer, 65
+		);
+
+		const cellColor = this._generateCellColor(cellId);
+
+		L.polygon(coords, {
+			fillColor: cellColor,
+			fillOpacity: calculatedOpacity, // Use the normalized value here
+			color: "#ffffff",
+			weight: 0.5,
+			opacity: 0.3 // Border opacity
+		}).bindTooltip(`
+			<b>Cell:</b> ${cellId}<br>
+			<b>Samples:</b> ${userCount.toLocaleString()}<br>
+			<b>Distance:</b> ${centerDistance.toFixed(0)}m
+		`).addTo(MapManager.registry['PM']);
+	},
+
+	
+	_findSiteByCell(cellId) {
+		let siteData = null;
+		['4G', '5G'].forEach(tech => {
+			const layerGroup = MapManager.registry[tech];
+			if (!layerGroup) return;
+
+			layerGroup.eachLayer(layer => {
+				// Check if this specific layer matches the Cell ID
+				if (layer.options && layer.options.cellId === cellId) {
+					// The first point of the polygon is always the tower center
+					const latlngs = layer.getLatLngs()[0]; 
+					siteData = {
+						lat: latlngs[0].lat, 
+						lon: latlngs[0].lng,
+						azimuth: layer.options.azimuth || 0
+					};
+				}
+			});
+		});
+		return siteData;
+	}
+	
 
 };
+
+
 
 const KPI_METADATA = {
     // Signal Quality KPIs - Higher is Better

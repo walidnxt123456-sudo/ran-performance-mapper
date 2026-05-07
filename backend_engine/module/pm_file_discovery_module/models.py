@@ -33,7 +33,7 @@ class InputExtractionConfig:
     mode: str = "extraction"
     kpi_identity_column: Union[str, List[str]] = field(default_factory=list)
     hour_identity_column: Optional[str] = None
-    extraction_mode: str = "avg" # "avg" / "bh"
+    extraction_mode: str = "avg" # "avg" / "bh" / "dist"
     target_date: List[str] = field(default_factory=list)
     target_cells: List[str] = field(default_factory=list)
 

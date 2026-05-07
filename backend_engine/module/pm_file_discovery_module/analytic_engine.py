@@ -56,8 +56,30 @@ class AnalyticEngine:
             
             if mode == "bh":
                 self._calculate_busy_hour(df, cid, kpi, hour)
+            elif mode == "avg":
+                self._calculate_averages(df, cid, kpi)                
             else:
-                self._calculate_averages(df, cid, kpi)
+                log.info(">>>_extract_raw_distribution")
+                self._extract_raw_distribution(df, cid, kpi)
+
+    def _extract_raw_distribution(self, df: pd.DataFrame, cid: str, kpi: str):
+        """
+        Returns all values for the specified column and date as a list 
+        without any aggregation (mean/max).
+        """
+        # Group by Cell ID and convert the KPI column into a list per cell
+        dist_series = df.groupby(cid)[kpi].apply(list)
+        
+        for cell, val_list in dist_series.items():
+            cell_str = str(cell)
+            if cell_str not in self.results:
+                self.results[cell_str] = {}
+                
+            # The contract expects a Dict[str, Any]. We pass the List[float]
+            self.results[cell_str][kpi] = {
+                "value": [round(float(v), 2) for v in val_list if pd.notnull(v)],
+                "busy_hour": "distribution" 
+            }
 
     def _calculate_averages(self, df: pd.DataFrame, cid: str, kpi: str):
         avg_series = df.groupby(cid)[kpi].mean()

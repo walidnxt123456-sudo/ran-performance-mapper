@@ -53,10 +53,11 @@ const PmUIController = {
 			<div class="pm-file-body" style="display:none; padding: 10px;">
 				
 				<div class="input-row">
-					<label>Aggregation:</label>
+					<label>Extraction Mode:</label>
 					<select id="pm-agg-${sid}">
 						<option value="bh">Busy Hour</option>
 						<option value="avg">Average</option>
+						<option value="distribution">Distribution (Vector)</option>
 					</select>
 				</div>
 

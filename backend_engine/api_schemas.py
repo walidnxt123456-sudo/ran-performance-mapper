@@ -69,7 +69,7 @@ class ExtractionTask:
     target_date: List[str]
     target_cells: List[str]
     hour_identity_column: Optional[str] = None
-    extraction_mode: str = "bh" # "bh" or "avg"
+    extraction_mode: str = "bh" # "bh" or "avg" or "dist"
 
 @dataclass
 class ExtractionRequest:
@@ -80,7 +80,7 @@ class ExtractionRequest:
 @dataclass
 class KPIValue:
     """The final calculated data point for a specific Cell/KPI."""
-    value: float
+    value: Union[float, List[float]]
     date: str
     extraction_mode: str
     file_name: str

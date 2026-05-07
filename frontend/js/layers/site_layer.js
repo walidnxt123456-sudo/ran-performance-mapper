@@ -193,6 +193,7 @@ const SiteLayer = {
 			siteId: siteId,
 			cellName: cellName,
 			cellId: sector.cell, // CRITICAL: This links map objects to PM data
+			azimuth: azimuth,
 			defaultTooltip: tooltipContent
 		});
 
@@ -200,6 +201,27 @@ const SiteLayer = {
 
 		// 4. Add to the correct Leaflet Group (4G or 5G)
 		MapManager.registry[tech].addLayer(polygon);
+	},
+	
+	renderTA(cellData) {
+		const stepMeters = 156; // Standard TA step
+		
+		cellData.vectors.forEach(bin => {
+			if (bin.value > 0) {
+				const inner = bin.index * stepMeters;
+				const outer = (bin.index + 1) * stepMeters;
+				
+				const coords = SpatialUtils.getDistributiveArc(
+					lat, lon, azimuth, inner, outer
+				);
+				
+				L.polygon(coords, {
+					fillColor: this.getTAColor(bin.index),
+					fillOpacity: bin.normalizedWeight, // More samples = more solid color
+					stroke: false
+				}).addTo(MapManager.registry['PM']);
+			}
+		});
 	},
 
     _log(msg) {
