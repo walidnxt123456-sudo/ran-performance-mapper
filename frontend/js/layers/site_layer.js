@@ -12,11 +12,20 @@
     "O": { radius: 400, width: 30, color: "#3498db", label: "L800" },
     "P": { radius: 400, width: 30, color: "#3498db", label: "L800" },
     "Q": { radius: 400, width: 30, color: "#3498db", label: "L800" },
+	"N": { radius: 400, width: 30, color: "#3498db", label: "L800" },
     
-	// 4G Capacity (e.g., L1800 / L2100)
-    "X": { radius: 300, width: 60, color: "#e67e22", label: "L2100" },
-    "Y": { radius: 300, width: 60, color: "#e67e22", label: "L2100" },
-    "Z": { radius: 300, width: 60, color: "#e67e22", label: "L2100" },
+	// 4G Capacity (e.g., L1800 )
+    "X": { radius: 300, width: 45, color: "#e67e22", label: "L1800" },
+    "Y": { radius: 300, width: 45, color: "#e67e22", label: "L1800" },
+    "Z": { radius: 300, width: 45, color: "#e67e22", label: "L1800" },
+	"L": { radius: 300, width: 45, color: "#e67e22", label: "L1800" },
+
+	// 4G Capacity (e.g., L2100)
+    "A": { radius: 200, width: 60, color: "#e67e22", label: "L2100" },
+    "B": { radius: 200, width: 60, color: "#e67e22", label: "L2100" },
+    "C": { radius: 200, width: 60, color: "#e67e22", label: "L2100" },
+	"D": { radius: 200, width: 60, color: "#e67e22", label: "L2100" },
+
 
     // 5G Suffixes
 	// 5G for N78

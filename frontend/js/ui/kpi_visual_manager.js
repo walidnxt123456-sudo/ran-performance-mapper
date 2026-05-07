@@ -31,24 +31,34 @@ const KPIVisualManager = {
     /**
      * Finds the min/max for a KPI and creates 3 equal intervals
      */
-    _calculateAutoIntervals(kpiName, results) {
-        let values = [];
-        Object.values(results).forEach(file => {
-            Object.values(file.cells).forEach(cell => {
-                if (cell[kpiName]) values.push(cell[kpiName].value);
-            });
-        });
+	_calculateAutoIntervals(kpiName, results) {
+		let values = [];
+		Object.values(results).forEach(file => {
+			Object.values(file.cells).forEach(cell => {
+				if (cell[kpiName]) {
+					const val = cell[kpiName].value;
+					// If it's a distribution array, push all individual numbers
+					if (Array.isArray(val)) {
+						val.forEach(v => { if (!isNaN(v) && v !== null) values.push(v); });
+					} else if (typeof val === 'number') {
+						values.push(val);
+					}
+				}
+			});
+		});
 
-        const min = Math.min(...values);
-        const max = Math.max(...values);
-        const step = (max - min) / 3;
+		if (values.length === 0) return { low: 0, mid: 0, colors: ['#27ae60', '#f1c40f', '#e74c3c'] };
 
-        return {
-            low: parseFloat((min + step).toFixed(2)),
-            mid: parseFloat((min + 2 * step).toFixed(2)),
-            colors: ['#27ae60', '#f1c40f', '#e74c3c'] // Green, Yellow, Red
-        };
-    },
+		const min = Math.min(...values);
+		const max = Math.max(...values);
+		const step = (max - min) / 3;
+
+		return {
+			low: parseFloat((min + step).toFixed(2)),
+			mid: parseFloat((min + 2 * step).toFixed(2)),
+			colors: ['#27ae60', '#f1c40f', '#e74c3c']
+		};
+	},
 	
 	renderTAPlotterControls(uniqueKPIs) {
         const container = document.getElementById('kpi-visual-controls');
@@ -81,27 +91,26 @@ const KPIVisualManager = {
 		const valueKey = document.getElementById('ta-value-select').value;
 
 		if (!this.lastResults) return;
-
+		
+		// Clear previous plots before drawing new ones to prevent "ghosting"
 		MapManager.registry['PM'].clearLayers();
 
 		Object.values(this.lastResults).forEach(file => {
 			Object.entries(file.cells).forEach(([cellId, kpis]) => {
-				const vectorData = kpis[vectorKey]?.value;
-				const samplesData = kpis[valueKey]?.value;
+				const vectorData = kpis[vectorKey]?.value; // e.g., [0, 1, 2...]
+				const samplesData = kpis[valueKey]?.value; // e.g., [33, 1166, 11050...]
 
 				if (Array.isArray(vectorData) && Array.isArray(samplesData)) {
-					// 1. Find the MAX samples for THIS cell to normalize opacity
+					// Find the peak users in this cell for normalization
 					const maxSamples = Math.max(...samplesData);
 					
 					const loopLength = Math.min(vectorData.length, samplesData.length);
 					for (let i = 0; i < loopLength; i++) {
-						const indexValue = vectorData[i];
 						const sampleCount = samplesData[i];
-						
 						if (sampleCount > 0) {
-							// 2. Calculate relative opacity (Peak = 0.9, Min = 0.1)
-							const opacity = (sampleCount / maxSamples) * 0.9;
-							this.renderSingleTAPlot(cellId, indexValue, sampleCount, Math.max(opacity, 0.1));
+							// Calculate relative opacity (Peak = 0.8, Min = 0.1)
+							const normalizedOpacity = (sampleCount / maxSamples) * 0.6; // Using a lower multiplier (0.6) for a softer aesthetic
+							this.renderSingleTAPlot(cellId, vectorData[i], sampleCount, Math.max(normalizedOpacity, 0.05)); // lower multiplier (0.05) for a softer aesthetic
 						}
 					}
 				}
@@ -257,11 +266,18 @@ const KPIVisualManager = {
     resetMap() {
         console.log("[VISUAL] Restoring original band colors...");
         
+		// 1. Remove the map legend if it exists
 		if (this.mapLegend) {
 			this.mapLegend.remove();
 			this.mapLegend = null;
 		}
 
+		// 2. Clear the Distribution (TA) layer group explicitly
+		if (MapManager.registry['PM']) {
+			MapManager.registry['PM'].clearLayers();
+		}
+		
+		// 3. Reset standard sector layers (4G/5G)
         ['4G', '5G'].forEach(tech => {
             MapManager.registry[tech].eachLayer(layer => {
                 // Get the original color (e.g., L800 blue, L1800 orange)
@@ -279,7 +295,7 @@ const KPIVisualManager = {
             });
         });
 
-        // Uncheck all KPI checkboxes in the UI
+        // 4. Uncheck all KPI checkboxes in the UI
         const checkboxes = document.querySelectorAll('#kpi-visual-controls input[type="checkbox"]');
         checkboxes.forEach(cb => cb.checked = false);
     },
@@ -353,32 +369,28 @@ const KPIVisualManager = {
 	 * Renders a distance-accurate polygon for TA Distribution
 	 * Uses one color per cell with opacity based on user count.
 	 */
-	renderSingleTAPlot(cellId, vectorValue, userCount, calculatedOpacity) {
+	renderSingleTAPlot(cellId, vectorValue, userCount, opacity) {
 		const site = this._findSiteByCell(cellId);
 		if (!site) return;
 
-		const stepMeters = 156; 
-		const centerDistance = vectorValue * stepMeters;
-		const inner = Math.max(0, centerDistance - 75); 
-		const outer = centerDistance + 75;
-
+		const centerDistance = vectorValue * 156; // 156m per TA step
 		const coords = SpatialUtils.getDistributiveArc(
-			site.lat, site.lon, site.azimuth, inner, outer, 65
+			site.lat, site.lon, site.azimuth, 
+			centerDistance - 78, centerDistance + 78, 65
 		);
 
 		const cellColor = this._generateCellColor(cellId);
 
 		L.polygon(coords, {
 			fillColor: cellColor,
-			fillOpacity: calculatedOpacity, // Use the normalized value here
-			color: "#ffffff",
-			weight: 0.5,
-			opacity: 0.3 // Border opacity
-		}).bindTooltip(`
-			<b>Cell:</b> ${cellId}<br>
-			<b>Samples:</b> ${userCount.toLocaleString()}<br>
-			<b>Distance:</b> ${centerDistance.toFixed(0)}m
-		`).addTo(MapManager.registry['PM']);
+			fillOpacity: opacity *0.7, // Scaled down for "softer" appearance
+			color: cellColor,  // Border matches fill color
+			weight: 1,  // Thinner border
+			opacity: 0.2,  // Very soft border opacity
+			dashArray: '3, 3',
+			interactive: true
+		}).bindTooltip(`Cell: ${cellId}<br>Samples: ${userCount}<br>Dist: ${centerDistance.toFixed(0)}m`)
+		  .addTo(MapManager.registry['PM']);
 	},
 
 	
