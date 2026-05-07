@@ -6,37 +6,40 @@
  * Uses: SpatialUtils for geometry and MapManager for the stage.
  */
  
- const BAND_CONFIG = {
-    // 4G Suffixes
-	// 4G Coverage (e.g., L800 / L900)
-    "O": { radius: 400, width: 30, color: "#3498db", label: "L800" },
-    "P": { radius: 400, width: 30, color: "#3498db", label: "L800" },
-    "Q": { radius: 400, width: 30, color: "#3498db", label: "L800" },
-	"N": { radius: 400, width: 30, color: "#3498db", label: "L800" },
-    
-	// 4G Capacity (e.g., L1800 )
-    "X": { radius: 300, width: 45, color: "#e67e22", label: "L1800" },
-    "Y": { radius: 300, width: 45, color: "#e67e22", label: "L1800" },
-    "Z": { radius: 300, width: 45, color: "#e67e22", label: "L1800" },
-	"L": { radius: 300, width: 45, color: "#e67e22", label: "L1800" },
+const BAND_CONFIG = {
+    "4G": {    
+		// 4G Suffixes
+		// 4G Coverage (e.g., L800 / L900)
+		"O": { radius: 400, width: 30, color: "#3498db", label: "L800" },
+		"P": { radius: 400, width: 30, color: "#3498db", label: "L800" },
+		"Q": { radius: 400, width: 30, color: "#3498db", label: "L800" },
+		"N": { radius: 400, width: 30, color: "#3498db", label: "L800" },
+		
+		// 4G Capacity (e.g., L1800 )
+		"X": { radius: 300, width: 45, color: "#e67e22", label: "L1800" },
+		"Y": { radius: 300, width: 45, color: "#e67e22", label: "L1800" },
+		"Z": { radius: 300, width: 45, color: "#e67e22", label: "L1800" },
+		"L": { radius: 300, width: 45, color: "#e67e22", label: "L1800" },
 
-	// 4G Capacity (e.g., L2100)
-    "A": { radius: 200, width: 60, color: "#e67e22", label: "L2100" },
-    "B": { radius: 200, width: 60, color: "#e67e22", label: "L2100" },
-    "C": { radius: 200, width: 60, color: "#e67e22", label: "L2100" },
-	"D": { radius: 200, width: 60, color: "#e67e22", label: "L2100" },
+		// 4G Capacity (e.g., L2100)
+		"A": { radius: 200, width: 65, color: "#27ae60", label: "L2100" },
+		"B": { radius: 200, width: 65, color: "#27ae60", label: "L2100" },
+		"C": { radius: 200, width: 65, color: "#27ae60", label: "L2100" },
+		"D": { radius: 200, width: 65, color: "#27ae60", label: "L2100" },
+	},
+	
+	"5G": {
+		// 5G Suffixes
+		// 5G for N78
+		"R": { radius: 200, width: 70, color: "#2ecc71", label: "N78" },
+		"S": { radius: 200, width: 70, color: "#2ecc71", label: "N78" },
+		"T": { radius: 200, width: 70, color: "#2ecc71", label: "N78" },
 
-
-    // 5G Suffixes
-	// 5G for N78
-    "R": { radius: 200, width: 70, color: "#2ecc71", label: "N78" },
-    "S": { radius: 200, width: 70, color: "#2ecc71", label: "N78" },
-    "T": { radius: 200, width: 70, color: "#2ecc71", label: "N78" },
-
-	// 5G for N3
-    "X": { radius: 280, width: 50, color: "#2ecc71", label: "N3" },
-    "Y": { radius: 280, width: 50, color: "#2ecc71", label: "N3" },
-    "Z": { radius: 280, width: 50, color: "#2ecc71", label: "N3" },
+		// 5G for N3
+		"X": { radius: 280, width: 50, color: "#2ecc71", label: "N3" },
+		"Y": { radius: 280, width: 50, color: "#2ecc71", label: "N3" },
+		"Z": { radius: 280, width: 50, color: "#2ecc71", label: "N3" },
+	},
     
     // Default fallback if suffix isn't found
     "DEFAULT": { radius: 200, width: 65, color: "#95a5a6", label: "Unknown" }
@@ -56,11 +59,15 @@ const SiteLayer = {
         '5G': null
     },
 	
-	_getBandSettings(cellName) {
+	_getBandSettings(cellName, tech) {
 		const suffix = cellName.slice(-1).toUpperCase();
 		
-		// Return the config for that suffix, or the DEFAULT if not found
-		return BAND_CONFIG[suffix] || BAND_CONFIG["DEFAULT"];
+		// Check if the technology exists in config, then check the suffix
+		if (BAND_CONFIG[tech] && BAND_CONFIG[tech][suffix]) {
+			return BAND_CONFIG[tech][suffix];
+		}
+		
+		return BAND_CONFIG["DEFAULT"];
 	}, 
 	
 	/**
@@ -105,8 +112,8 @@ const SiteLayer = {
 			// 1. Sort sectors by radius (Descending) 
 			// We use a spread [...site.sectors] to avoid mutating the original data
 			const sortedSectors = [...site.sectors].sort((a, b) => {
-				const configA = this._getBandSettings(a.cell_name);
-				const configB = this._getBandSettings(b.cell_name);
+				const configA = this._getBandSettings(a.cell_name, tech);
+				const configB = this._getBandSettings(b.cell_name, tech);
 				
 				// Larger radius (e.g. 280) comes first in the array
 				// Smaller radius (e.g. 180) comes last so it is drawn "on top"
@@ -178,7 +185,7 @@ const SiteLayer = {
 			.join('<br>');
 
 		// 1. Get frequency band settings (Radius/Color)
-		const config = this._getBandSettings(cellName);
+		const config = this._getBandSettings(cellName, tech);
 
 		// 2. Generate Arc geometry (uses the 5-degree step loop for curves)
 		const wedgeCoords = SpatialUtils.getSectorWedge(

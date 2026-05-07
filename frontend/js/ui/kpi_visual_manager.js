@@ -94,6 +94,11 @@ const KPIVisualManager = {
 		
 		// Clear previous plots before drawing new ones to prevent "ghosting"
 		MapManager.registry['PM'].clearLayers();
+		
+		// Hide 4G and 5G layers for a clear view
+		['4G', '5G'].forEach(tech => {
+			MapManager.setLayerVisibility(tech, false);
+		});
 
 		Object.values(this.lastResults).forEach(file => {
 			Object.entries(file.cells).forEach(([cellId, kpis]) => {
