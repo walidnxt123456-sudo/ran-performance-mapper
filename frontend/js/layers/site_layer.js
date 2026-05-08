@@ -230,6 +230,7 @@ const SiteLayer = {
 			siteId: siteId,
 			cellName: cellName,
 			cellId: sector.cell, // CRITICAL: This links map objects to PM data
+			tech: tech,
 			azimuth: azimuth,
 			defaultTooltip: tooltipContent
 		});

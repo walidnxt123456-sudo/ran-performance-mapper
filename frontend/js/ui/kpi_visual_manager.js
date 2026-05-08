@@ -228,7 +228,9 @@ const KPIVisualManager = {
     },
 
     _styleLayer(layer, kpiName, config) {
+		if (!layer.options || !layer.options.cellId) return;
         const cellId = layer.options.cellId;
+		const tech = layer.options.tech;
         let kpiValue = null;
 
         // Find value in results
@@ -254,7 +256,7 @@ const KPIVisualManager = {
             }
         } else {
             // Reset to original band color if not active
-            const original = SiteLayer._getBandSettings(layer.options.cellName);
+            const original = SiteLayer._getBandSettings(layer.options.cellName, tech);
             layer.setStyle({ fillColor: original.color, fillOpacity: 0.4 });
         }
     },
@@ -285,8 +287,9 @@ const KPIVisualManager = {
 		// 3. Reset standard sector layers (4G/5G)
         ['4G', '5G'].forEach(tech => {
             MapManager.registry[tech].eachLayer(layer => {
+				if (!layer.options || !layer.options.cellId) return;
                 // Get the original color (e.g., L800 blue, L1800 orange)
-                const original = SiteLayer._getBandSettings(layer.options.cellName);
+                const original = SiteLayer._getBandSettings(layer.options.cellName, tech);
                 
                 // Set the style back to default
                 layer.setStyle({ 
