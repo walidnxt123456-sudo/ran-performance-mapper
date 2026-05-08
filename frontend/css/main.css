@@ -249,3 +249,27 @@ body, html {
     margin-right: 8px;
     opacity: 0.8;
 }
+
+/* Base style for labels */
+.site-label {
+    background: rgba(255, 255, 255, 0.7); /* Set semi-transparent white background */
+    border: 1px solid #ccc;              /* Set thin light-grey border */
+    border-radius: 2px;                  /* Set slightly rounded corners */
+    text-align: center;                  /* Set text alignment to center */
+    font-size: 9px;                      /* Set small font size */
+    font-weight: normal;                 /* Set standard thickness */
+    color: #444;                         /* Set dark grey text color */
+    padding: 0px 2px;                    /* Set tight padding */
+    white-space: nowrap;                 /* Set no text wrapping */
+    pointer-events: none;                /* Set clicks to pass through */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1); /* Set subtle shadow */
+    z-index: 1000 !important;            /* Set label on top */
+    
+    /* FORCE HIDDEN */
+    display: none !important;            
+}
+
+/* Show labels ONLY when the map has the 'show-site-labels' class */
+.show-site-labels .site-label {
+    display: block !important;
+}

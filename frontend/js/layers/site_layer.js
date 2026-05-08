@@ -108,6 +108,9 @@ const SiteLayer = {
 			const tech = site.technology; 
 			const siteLat = site.lat;
 			const siteLon = site.lon;
+			
+			//Add site label
+			this._addSiteLabel(siteLat, siteLon, site.site_id, tech);
 
 			// 1. Sort sectors by radius (Descending) 
 			// We use a spread [...site.sectors] to avoid mutating the original data
@@ -125,6 +128,24 @@ const SiteLayer = {
 				this._drawSector(site.site_id, tech, siteLat, siteLon, sector);
 			});
 		});
+	},
+	
+	/**
+	* Creates a permanent text label at the site location
+	*/
+	_addSiteLabel(lat, lon, siteId, tech) {
+		const labelIcon = L.divIcon({
+			className: 'site-label', // The CSS handles visibility now!
+			html: siteId,
+			iconSize: [60, 12],
+			iconAnchor: [30, 6]
+		});
+
+		L.marker([lat, lon], { 
+			icon: labelIcon,
+			interactive: false,
+			zIndexOffset: 1000 
+		}).addTo(MapManager.registry[tech]);
 	},
 
     /**

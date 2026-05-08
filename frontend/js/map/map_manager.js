@@ -59,6 +59,27 @@ const MapManager = {
             document.getElementById('lat').value = lat.toFixed(6);
             document.getElementById('lon').value = lng.toFixed(6);
         });
+		
+		// Zoom-Dependent Labels ---
+		this.map.on('zoomend', () => {
+				const currentZoom = Math.floor(this.map.getZoom()); // Force integer
+				const mapContainer = this.map.getContainer(); // Get the <div> with id="map"
+				
+				this._log(`Zoom changed to: ${currentZoom} (raw: ${this.map.getZoom()})`);
+				
+				// If zoom is 15 or higher, add the class to show labels
+				if (currentZoom >= 15) {
+					mapContainer.classList.add('show-site-labels');
+					this._log('Added show-site-labels class');
+					
+				} else {
+					mapContainer.classList.remove('show-site-labels');
+					this._log('*** REMOVED show-site-labels class ***');
+				}
+				
+				this._log(`Map container classes: ${mapContainer.className}`);
+			});
+		this.map.fire('zoomend');            
     },
 
     /**

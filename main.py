@@ -51,4 +51,6 @@ async def fetch_kpi(data: dict):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
+    # Change host to 0.0.0.0 to allow access from other computers on the network
+    #uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
