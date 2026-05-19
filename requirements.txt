@@ -1,10 +1,11 @@
-# Web Framework
-fastapi
-uvicorn[standard]
+# Web Framework & Validation
+fastapi>=0.110.0
+uvicorn[standard]>=0.28.0
+pydantic>=2.6.0
 
 # Data Processing
-pandas
-openpyxl
+pandas>=2.2.0
+openpyxl>=3.1.0
 
 # Utilities
-python-multipart
+python-multipart>=0.0.9
