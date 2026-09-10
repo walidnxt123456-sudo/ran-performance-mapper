@@ -46,7 +46,7 @@ class GeoServiceController:
                 if service_response.get("status") == "success":
                     all_results.extend(service_response.get("sites", []))
             else:
-                print(f"⚠️ [GEO_SERVICE_CTRL] No CSV found for technology: {tech}")
+                print(f"[GEO_SERVICE_CTRL] No CSV found for technology: {tech}")
 
         if not all_results:
             return {"status": "empty", "sites": []}

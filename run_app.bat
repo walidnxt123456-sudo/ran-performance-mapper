@@ -29,7 +29,11 @@ echo [2/2] Starting Backend Server...
 echo.
 echo Application will be available at:
 echo Local:   http://localhost:8000
-echo Network: http://%COMPUTERNAME%:8000
+@echo off
+:: Récupère l'adresse IPv4 locale
+for /f "tokens=2 delims=:" %%i in ('ipconfig ^| findstr /c:"IPv4"') do set IP=%%i
+echo Network: http://%IP:~1%:8000
+:: echo Network: http://%COMPUTERNAME%:8000
 echo.
 echo ------------------------------------------
 

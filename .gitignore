@@ -25,3 +25,5 @@ data/cell_file/*
 
 *.log*.log
 frontend/Nouveau document texte.txt
+
+rf_app_debug.log

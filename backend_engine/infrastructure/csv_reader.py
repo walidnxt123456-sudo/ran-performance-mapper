@@ -61,7 +61,7 @@ class CsvReader:
             df.columns = df.columns.str.strip()
             return df
         except Exception as e:
-            print(f"❌ Error reading CM {file_path.name}: {e}")
+            print(f"Error reading CM {file_path.name}: {e}")
             return None
 
     def read_pm_data(self, file_path: Path) -> pd.DataFrame:
@@ -87,7 +87,7 @@ class CsvReader:
             df.columns = df.columns.str.strip()
             return df
         except Exception as e:
-            print(f"❌ Error reading PM {file_path.name}: {e}")
+            print(f"Error reading PM {file_path.name}: {e}")
             return None
     
     def read_design_data(self, file_path: Path) -> pd.DataFrame:
@@ -117,7 +117,7 @@ class CsvReader:
                     return df
                     
             except Exception as e:
-                print(f"❌ Error reading {file_path.name}: {e}")
+                print(f"Error reading {file_path.name}: {e}")
                 return None
 
     def read_rf_data(self, file_path: Path) -> pd.DataFrame:

@@ -31,18 +31,18 @@ const BAND_CONFIG = {
 	"5G": {
 		// 5G Suffixes
 		// 5G for N78
-		"R": { radius: 200, width: 70, color: "#2ecc71", label: "N78" },
-		"S": { radius: 200, width: 70, color: "#2ecc71", label: "N78" },
-		"T": { radius: 200, width: 70, color: "#2ecc71", label: "N78" },
+		"R": { radius: 200, width: 70, color: "#cc0e0e", label: "N78" },
+		"S": { radius: 200, width: 70, color: "#cc0e0e", label: "N78" },
+		"T": { radius: 200, width: 70, color: "#cc0e0e", label: "N78" },
 
 		// 5G for N3
-		"X": { radius: 280, width: 50, color: "#2ecc71", label: "N3" },
-		"Y": { radius: 280, width: 50, color: "#2ecc71", label: "N3" },
-		"Z": { radius: 280, width: 50, color: "#2ecc71", label: "N3" },
+		"X": { radius: 280, width: 50, color: "#f1ee0f", label: "N3" },
+		"Y": { radius: 280, width: 50, color: "#f1ee0f", label: "N3" },
+		"Z": { radius: 280, width: 50, color: "#f1ee0f", label: "N3" },
 	},
     
     // Default fallback if suffix isn't found
-    "DEFAULT": { radius: 200, width: 65, color: "#95a5a6", label: "Unknown" }
+    "DEFAULT": { radius: 200, width: 65, color: "#131414", label: "Unknown" }
 };
 
 
