@@ -182,7 +182,7 @@ body, html {
 .toggle-icon {
     font-family: monospace;
     margin-right: 8px;
-    color: #3498db;
+    color: #2c8ccc;
     font-weight: bold;
 }
 
@@ -273,3 +273,4 @@ body, html {
 .show-site-labels .site-label {
     display: block !important;
 }
+

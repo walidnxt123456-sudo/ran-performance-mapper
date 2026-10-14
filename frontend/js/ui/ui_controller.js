@@ -4,8 +4,23 @@ const UIController = {
     // 1. You must include this helper function to read the sidebar inputs
     getSelectionData() {
         const selectedTechs = [];
-        if (document.getElementById('check-4g').checked) selectedTechs.push("4G");
-        if (document.getElementById('check-5g').checked) selectedTechs.push("5G");
+        
+        // Vérification sécurisée des checkboxes si elles existent encore
+        const checkboxes = document.querySelectorAll('.tree-tech-checkbox:checked');
+        if (checkboxes.length > 0) {
+            checkboxes.forEach(cb => {
+                selectedTechs.push(cb.getAttribute('data-tech'));
+            });
+        } else {
+            // Valeur de secours par défaut incluant toutes les technologies
+            selectedTechs.push("2G", "3G", "4G", "5G");
+        }
+
+        // Par défaut, si aucune case n'est trouvée (ou si vous utilisez l'arborescence), 
+        // vous pouvez adapter ou renvoyer un tableau par défaut (ex: ["4G", "5G"])
+        if (selectedTechs.length === 0) {
+            selectedTechs.push("4G", "5G"); // Valeur de secours pour la requête de découverte
+        }
 
         return {
             center: {

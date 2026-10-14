@@ -11,10 +11,14 @@ const MapManager = {
     
     // The Registry holds the actual Leaflet Layer Groups
     registry: {
+        '2G': L.featureGroup(),
+        '3G': L.featureGroup(),
         '4G': L.featureGroup(),
         '5G': L.featureGroup(),
         'PM': L.featureGroup(),
         'CM': L.featureGroup(),
+        'Mesures': L.featureGroup(),
+        'MSAN': L.featureGroup(),
         'UI': L.featureGroup() // For selection markers/temp lines
     },
 

@@ -11,7 +11,7 @@
 <body>
 
     <header class="top-bar">
-        <div class="logo">RF Optimizer</div>
+        <div class="logo">RF Optimizer </div>
         <div id="status-badge" class="badge">Disconnected</div>
     </header>
 
@@ -19,25 +19,19 @@
 	
 		
         <aside class="sidebar">
+
 			<section class="control-group">
-				<h4>Technology Selection</h4>
-				<div class="tech-grid">
-					<label class="custom-check">
-						<input type="checkbox" id="check-4g" checked> 
-						<span class="label-text">4G (LTE)</span>
-					</label>
-					<label class="custom-check">
-						<input type="checkbox" id="check-5g"> 
-						<span class="label-text">5G (NR)</span>
-					</label>
+				<h4>Base - Mobile</h4>
+				<div id="cell-hierarchy-tree" class="tree-container" style="font-family: monospace; font-size: 0.85em; max-height: 220px; overflow-y: auto; background: #fafafa; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+					<span style="color: #888;">Chargement de l'arborescence...</span>
 				</div>
 			</section>
-			
+
 			<section class="control-group">
 				<h4>Search Density</h4>
 				<div class="input-row">
 					<label for="site-limit">Nearest Sites:</label>
-					<input type="number" id="site-limit" value="6" min="1" max="50">
+					<input type="number" id="site-limit" value="9999" min="1" max="50">
 				</div>
 				<p class="help-text">Shows the top N sites closest to the red pin.</p>
 			</section>
@@ -72,7 +66,81 @@
 
         </aside>
 
-        <div id="map-container">
+
+	<!-- Section Qualification FWA Start -->
+	<!--
+	<section class="control-group" id="fwa-qualification-section">
+		<h4>FWA Qualification</h4>
+		<p class="help-text">Saisissez les coordonnées et les valeurs RF mesurées :</p>
+		
+		<div class="fwa-coords-grid">
+			<div class="input-field">
+				<label for="fwa-lat">Latitude (°N):</label>
+				<input type="number" id="fwa-lat" placeholder="35.8308" step="0.000001" min="-90" max="90">
+			</div>
+			<div class="input-field">
+				<label for="fwa-lon">Longitude (°E):</label>
+				<input type="number" id="fwa-lon" placeholder="10.6303" step="0.000001" min="-180" max="180">
+			</div>
+		</div>
+
+		<div class="fwa-grid" style="margin-top: 10px;">
+			<div class="input-field">
+				<label for="fwa-rsrp">LTE 4G RSRP (dBm):</label>
+				<input type="number" id="fwa-lte-rsrp" placeholder="-95" step="1" min="-140" max="-40">
+			</div>
+
+			<div class="input-field">
+				<label for="fwa-sinr">LTE 4G SINR/SNR (dB):</label>
+				<input type="number" id="fwa-lte-sinr" placeholder="12" step="0.5" min="-10" max="40">
+			</div>
+
+			<div class="input-field">
+				<label for="fwa-pci">LTE 4G PCI :</label>
+				<input type="number" id="fwa-lte-pci" placeholder="124" min="0" max="1008">
+			</div>
+
+			<div class="input-field">
+				<label for="fwa-rsrp">NR 5G RSRP (dBm):</label>
+				<input type="number" id="fwa-nr-rsrp" placeholder="-95" step="1" min="-140" max="-40">
+			</div>
+
+			<div class="input-field">
+				<label for="fwa-sinr">NR 5G SINR/SNR (dB):</label>
+				<input type="number" id="fwa-nr-sinr" placeholder="12" step="0.5" min="-10" max="40">
+			</div>
+
+			<div class="input-field">
+				<label for="fwa-pci">NR 5G PCI :</label>
+				<input type="number" id="fwa-nr-pci" placeholder="124" min="0" max="1008">
+			</div>
+			
+			<div class="input-field">
+				<label for="fwa-pci">NR 5G PCI neighbor:</label>
+				<input type="number" id="fwa-nr-pci-neighbor" placeholder="124" min="0" max="1008">
+			</div>
+
+		</div>
+
+		<button id="btn-qualify-fwa" class="btn-primary" style="width: 100%; margin-top: 12px;">
+			Évaluer la Qualification FWA
+		</button>
+
+		<div id="fwa-result-card" class="fwa-result-card" style="display: none; margin-top: 15px;">
+			<div class="fwa-status-header">
+				<span>Statut :</span>
+				<span id="fwa-status-badge" class="badge">--</span>
+			</div>
+			<p id="fwa-status-coords" class="fwa-coords-text"></p>
+			<p id="fwa-status-details" class="fwa-details-text"></p>
+		</div>
+	</section>
+	-->
+	<!-- Section Qualification FWA END -->
+
+
+
+		<div id="map-container">
             <div id="map"></div>
         </div>
 

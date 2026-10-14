@@ -1,16 +1,25 @@
 # main.py
+import sys
+import io
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from backend_engine.core_controller import RFController # Import the Brain
-import sys
-import io
+# Import du routeur de configuration
+from backend_engine.config_controller import router as config_router
+
 
 # Force UTF-8 encoding for stdout and stderr
 if sys.stdout.encoding != 'utf-8':
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-    
+
+# 1. Instanciation de FastAPI    
 app = FastAPI()
+
+# 2. Enregistrement des routeurs
+app.include_router(config_router)
+
+# 3. Initialisation du contrôleur principal
 rf_brain = RFController() # Initialize the Brain
 
 app.mount("/static", StaticFiles(directory="frontend"), name="static")

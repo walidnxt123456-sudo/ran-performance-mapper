@@ -38,6 +38,7 @@ echo.
 echo ------------------------------------------
 
 :: 4. Run the app using the absolute path to the venv python
+start chrome http://localhost:8000
 "%PYTHON_EXE%" main.py
 
 pause

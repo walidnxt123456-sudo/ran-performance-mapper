@@ -96,7 +96,7 @@ const KPIVisualManager = {
 		MapManager.registry['PM'].clearLayers();
 		
 		// Hide 4G and 5G layers for a clear view
-		['4G', '5G'].forEach(tech => {
+		['2G','3G','4G', '5G'].forEach(tech => {
 			MapManager.setLayerVisibility(tech, false);
 		});
 
@@ -212,7 +212,7 @@ const KPIVisualManager = {
         
         // 3. Loop through all 4G and 5G sectors currently on the map
         let updateCount = 0;
-        ['4G', '5G'].forEach(tech => {
+        ['2G','3G','4G', '5G'].forEach(tech => {
 			const layerGroup = MapManager.registry[tech];
 			if (!layerGroup) return;
 			
@@ -285,7 +285,7 @@ const KPIVisualManager = {
 		}
 		
 		// 3. Reset standard sector layers (4G/5G)
-        ['4G', '5G'].forEach(tech => {
+        ['2G','3G','4G', '5G'].forEach(tech => {
             MapManager.registry[tech].eachLayer(layer => {
 				if (!layer.options || !layer.options.cellId) return;
                 // Get the original color (e.g., L800 blue, L1800 orange)
@@ -404,7 +404,7 @@ const KPIVisualManager = {
 	
 	_findSiteByCell(cellId) {
 		let siteData = null;
-		['4G', '5G'].forEach(tech => {
+		['2G','3G','4G', '5G'].forEach(tech => {
 			const layerGroup = MapManager.registry[tech];
 			if (!layerGroup) return;
 

@@ -55,11 +55,14 @@ class GeoLocatorNearest:
         return R * 2 * np.arctan2(np.sqrt(a), np.sqrt(1-a))
 
     def _detect_tech(self, filename):
-        """Identifies technology (4G/5G) based on filename patterns."""
+        """Identifies technology (2G/3G/4G/5G) based on filename patterns."""
         fn = filename.lower()
+        if any(x in fn for x in ["2g", "gsm"]): return "2G"
+        if any(x in fn for x in ["3g", "umts", "utran"]): return "3G"
         if any(x in fn for x in ["4g", "lte"]): return "4G"
         if any(x in fn for x in ["5g", "nr"]): return "5G"
         return "Unknown"
+
 
     def find_nearest_sites(self, request_json: dict) -> dict:
         """
@@ -99,14 +102,23 @@ class GeoLocatorNearest:
             return {"status": "error", "message": "Missing geographic columns (lat/lon)."}
             
         # 2. Tech Detection (Prioritize column content, fallback to filename)
+        # A modifier
         tech = self._detect_tech(file_path.name)
-        if cell_col and 'nrcell' in cell_col.lower():
-            tech = "5G"
-        elif cell_col and ('utran' in cell_col.lower() or 'lte' in cell_col.lower()):
-            tech = "4G"
-        print("tech")
-        print(tech)
-        
+
+        # Si le nom du fichier ne suffit pas ("Unknown"), on analyse les colonnes proprement
+        if tech == "Unknown" and cell_col:
+            cell_col_lower = cell_col.lower()
+            if 'nrcell' in cell_col_lower:
+                tech = "5G"
+            elif 'eutran' in cell_col_lower or 'lte' in cell_col_lower:
+                tech = "4G"
+            elif 'utran' in cell_col_lower:
+                tech = "3G"
+            elif 'bcch' in cell_col_lower or 'ci' in cell_col_lower:
+                tech = "2G"
+
+        print(f"Tech detectée pour {file_path.name}: {tech}")
+      
         # 3. Numeric Cleaning and Distance Calculation
         # Ensure values are strings, replace comma with dot, then convert to numeric
         df[lat_col] = pd.to_numeric(df[lat_col].astype(str).str.replace(',', '.'), errors='coerce')
