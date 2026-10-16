@@ -19,6 +19,7 @@ const MapManager = {
         'CM': L.featureGroup(),
         'Mesures': L.featureGroup(),
         'MSAN': L.featureGroup(),
+        'DT': L.featureGroup(),
         'UI': L.featureGroup() // For selection markers/temp lines
     },
 
@@ -50,6 +51,12 @@ const MapManager = {
 
         // Add all registered layers to the map immediately
         Object.values(this.registry).forEach(layer => layer.addTo(this.map));
+
+        // --- Initialisation de DriveTestLayer ---
+        if (typeof DriveTestLayer !== 'undefined') {
+            this.driveTestLayer = new DriveTestLayer(this.map);
+            this._log("DriveTestLayer initialized successfully.");
+        }
 
         this._setupEvents();
     },

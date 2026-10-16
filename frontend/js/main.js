@@ -101,5 +101,11 @@ document.addEventListener('DOMContentLoaded', async() => {
 		});
 	}
 
+    // Bind Drive Test Scan Button
+    const dtScanBtn = document.getElementById('btn-dt-scan');
+    if (dtScanBtn) {
+        dtScanBtn.addEventListener('click', () => DtUIController.triggerScan());
+    }
+
     console.log("%c[SYSTEM] All modules linked and ready.", "color: #2ecc71;");
 });

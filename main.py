@@ -45,6 +45,17 @@ async def find_nearest(data: dict):
     print(data)
     return rf_brain.process_request(data)
 
+# This is our specific endpoint for Drive Test Scan
+@app.post("/api/drive-test/scan")
+async def scan_drive_test():
+    """Scans ./data/dt directory for available drive test files via RFController."""
+    return rf_brain.process_request({"mode": "drive_test_scan"})
+
+@app.post("/api/drive-test/data")
+async def get_drive_test_data(data: dict):
+    """Parses and returns GPS points and metrics for a specific drive test file via RFController."""
+    data["mode"] = "drive_test_data"
+    return rf_brain.process_request(data)
 
 # This is our specific endpoint for kpi fetch
 """

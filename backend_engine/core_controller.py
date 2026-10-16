@@ -1,6 +1,7 @@
 # backend_engine/core_controller.py
 from backend_engine.controllers.geo_service_controller import GeoServiceController
 from backend_engine.controllers.pm_service_controller import PmServiceController
+from backend_engine.controllers.drive_test_controller import DriveTestController
 from backend_engine.utils.session_manager import SessionManager
 from backend_engine.utils.debug_logger import setup_logger
 
@@ -23,8 +24,10 @@ class RFController:
         self.geo_manager = GeoServiceController()
         
         self.pm_manager = PmServiceController()
+
+        self.dt_manager = DriveTestController()
         
-        log.info("RF Controller initialized with GeoLocator Service.")
+        log.info("RF Controller initialized with Geo, PM, and Drive Test Services.")
 
     def process_request(self, data: dict) -> dict:
         """
@@ -43,6 +46,11 @@ class RFController:
             log.info(f">>> Routing to PM Batch Extraction (Mode: {mode})")
             log.info(data)
             return self.pm_manager.fetch_kpi_layer(data)
+        
+        elif mode == "drive_test_scan":
+            return self.dt_manager.handle_scan()
+        elif mode == "drive_test_data":
+            return self.dt_manager.handle_get_data(data)
             
         else:
             log.error(f"Unknown Request Mode: {mode}")

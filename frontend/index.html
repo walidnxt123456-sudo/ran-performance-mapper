@@ -64,6 +64,35 @@
 				<div id="pm-tree-container" class="pm-tree"></div>
 			</section>
 
+			<!-- Section Drive Test Analysis Start -->
+			<section class="control-group" id="drive-test-section">
+				<h4>Drive Test Analysis</h4>
+				
+				<button id="btn-dt-scan" class="btn-primary" style="width: 100%; margin-top: 10px;">
+					Scan Drive Test
+				</button>
+				
+				<div id="dt-container" style="margin-top: 10px;">
+					<select id="dt-file-select" style="width: 100%; padding: 6px; margin-top: 5px; display: none;">
+						<option value="">-- Sélectionnez un fichier DT --</option>
+					</select>
+					
+					<div id="dt-config-panel" style="display: none; margin-top: 10px;">
+						<div class="input-row" style="display: block;">
+							<label style="font-weight: bold; display: block; margin-bottom: 5px;">Métriques de Mesure (Multi-choix) :</label>
+							<div id="dt-metrics-container" style="max-height: 150px; overflow-y: auto; background: #fff; border: 1px solid #ccc; padding: 6px; border-radius: 4px;">
+								<!-- Rempli dynamiquement -->
+							</div>
+						</div>
+						
+						<button id="btn-dt-extract" class="btn-primary" style="width: 100%; margin-top: 10px;">
+							Afficher / Extraire DT
+						</button>
+					</div>
+				</div>
+			</section>
+			<!-- Section Drive Test Analysis End -->
+
         </aside>
 
 
@@ -173,10 +202,13 @@
 
 	<!-- 3. Layer Managers -->
 	<script src="/static/js/layers/site_layer.js"></script>
+	<script src="/static/js/layers/drive_test_layer.js"></script>
+	<script src="/static/js/ui/dt_visual_manager.js"></script>
 	<script src="/static/js/ui/kpi_visual_manager.js"></script>
 
 	<!-- 4. UI MANAGERS (Crucial: KPIVisualManager must be first) -->
 	<script src="/static/js/ui/pm_ui_controller.js"></script>
+	<script src="/static/js/ui/dt_ui_controller.js"></script>
 	<script src="/static/js/ui/ui_controller.js"></script>
 
 	<!-- 5. Main Entry Point -->

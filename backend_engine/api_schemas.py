@@ -98,3 +98,36 @@ class ExtractionResponse:
     success: bool
     extraction_results: Dict[str, FileResult] # { "file_name": FileResult }
     metadata: Dict[str, Any] = field(default_factory=dict) # e.g., execution_time_ms
+
+# --- FLOW 3: DRIVE TEST ANALYSIS ---
+
+@dataclass
+class DriveTestFileMetadata:
+    """Metadata discovered for a specific Drive Test CSV file."""
+    file_name: str
+    detected_technology: str  # "3G", "4G", "5G", etc.
+    total_rows: int
+    valid_gps_points: int
+    columns: List[str] = field(default_factory=list)
+
+@dataclass
+class DriveTestScanResponse:
+    """Backend -> Frontend: List of available Drive Test files and metadata."""
+    success: bool
+    count: int
+    drive_test_discovery: List[DriveTestFileMetadata]
+
+@dataclass
+class DriveTestRequest:
+    """Frontend -> Backend: Request detailed data for a specific Drive Test file."""
+    file_name: str
+    mode: str = "drive_test_data"
+
+@dataclass
+class DriveTest的点Response: # ou DriveTestDataResponse
+    """Backend -> Frontend: GPS points and radio metrics for map visualization."""
+    success: bool
+    file_name: str
+    detected_technology: str
+    count: int
+    data: List[Dict[str, Any]]

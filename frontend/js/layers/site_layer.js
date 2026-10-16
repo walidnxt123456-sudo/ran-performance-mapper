@@ -8,11 +8,11 @@
 
 // --- 1. AJOUT DES RÈGLES DE CONFIGURATION DYNAMIQUES ---
 const DYNAMIC_BAND_RULES = {
-    "2G_900": { radius: 400, width: 65, color: "#8e44ad", label: "2G_900" },
+    "2G_900": { radius: 450, width: 65, color: "#8e44ad", label: "2G_900" },
     "2G_1800": { radius: 350, width: 60, color: "#9b59b6", label: "2G_1800" },
-    "3G_900": { radius: 400, width: 65, color: "#3498db", label: "3G_900" },
+    "3G_900": { radius: 450, width: 65, color: "#3498db", label: "3G_900" },
     "3G_2100": { radius: 250, width: 70, color: "#2980b9", label: "3G_2100" },
-    "4G_800": { radius: 400, width: 30, color: "#3498db", label: "L800" },
+    "4G_800": { radius: 450, width: 30, color: "#3498db", label: "L800" },
     "4G_1800": { radius: 300, width: 45, color: "#3fecf8", label: "L1800" },
     "4G_2100": { radius: 200, width: 65, color: "#27ae60", label: "L2100" },
     "4G_2600": { radius: 200, width: 55, color: "#00d7ff", label: "L2600" },
@@ -29,12 +29,12 @@ const BAND_MAPPING = {
  
 const BAND_CONFIG = {
 	"2G": {
-		"A": { radius: 400, width: 65, color: "#8e44ad", label: "GSM900" },
-		"B": { radius: 400, width: 65, color: "#8e44ad", label: "GSM900" },
-		"C": { radius: 400, width: 65, color: "#8e44ad", label: "GSM900" },
-		"D": { radius: 400, width: 65, color: "#8e44ad", label: "GSM900" },
+		"A": { radius: 450, width: 65, color: "#8e44ad", label: "GSM900" },
+		"B": { radius: 450, width: 65, color: "#8e44ad", label: "GSM900" },
+		"C": { radius: 450, width: 65, color: "#8e44ad", label: "GSM900" },
+		"D": { radius: 450, width: 65, color: "#8e44ad", label: "GSM900" },
 		"1800": { radius: 450, width: 60, color: "#9b59b6", label: "GSM1800" },
-		"DEFAULT": { radius: 400, width: 65, color: "#8e44ad", label: "2G" }
+		"DEFAULT": { radius: 450, width: 65, color: "#8e44ad", label: "2G" }
 	},
 	
 	"3G": {
